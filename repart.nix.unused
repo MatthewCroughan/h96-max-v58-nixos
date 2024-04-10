@@ -1,0 +1,21 @@
+{ modulesPath, config, pkgs, lib, ... }:
+let
+  uboot = pkgs.callPackage ./u-boot {};
+in
+{
+  nixpkgs.config.allowUnfree = true;
+  imports = [ "${modulesPath}/image/repart.nix" ];
+  image.repart = {
+    name = "image";
+    partitions = {
+      "uboot" = {
+        repartConfig = {
+          Type = "linux-generic";
+          Label = "uboot";
+          CopyBlocks = uboot + "/u-boot-rockchip.bin";
+          SizeMinBytes = "20M";
+        };
+      };
+    };
+  };
+}
