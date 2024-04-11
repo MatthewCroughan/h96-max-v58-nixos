@@ -1,0 +1,1859 @@
+[    1.386642] [    T0] Booting Linux on physical CPU 0x0000000000 [0x412fd050]
+[    1.386663] [    T0] Linux version 5.10.66 (qmx_srv@qmxsrv-MS-7C09) (Android (7284624, based on r416183b) clang version 12.0.5 (https://android.googlesource.com/toolchain/llvm-project c935d99d7cf2016289302412d708641d52d2f7ee), LLD 12.0.5 (/buildbot/src/android/llvm-toolchain/out/llvm-project/lld c935d99d7cf2016289302412d708641d52d2f7ee)) #18 SMP PREEMPT Wed Nov 16 14:05:36 CST 2022
+[    1.400056] [    T0] Machine model: Rockchip RK3588 NVR DEMO LP4 V10 Android Board
+[    1.438244] [    T0] earlycon: uart8250 at MMIO32 0x00000000feb50000 (options '')
+[    1.443260] [    T0] printk: bootconsole [uart8250] enabled
+[    1.451105] [    T0] OF: fdt: Reserved memory: failed to reserve memory for node 'drm-cubic-lut@00000000': base 0x0000000000000000, size 0 MiB
+[    1.452299] [    T0] Reserved memory: created CMA memory pool at 0x00000001ff800000, size 8 MiB
+[    1.453079] [    T0] OF: reserved mem: initialized node cma, compatible id shared-dma-pool
+[    1.565520] [    T0] Zone ranges:
+[    1.565828] [    T0]   DMA32    [mem 0x0000000000200000-0x00000000ffffffff]
+[    1.566458] [    T0]   Normal   [mem 0x0000000100000000-0x00000001ffffffff]
+[    1.567085] [    T0] Movable zone start for each node
+[    1.567536] [    T0] Early memory node ranges
+[    1.567925] [    T0]   node   0: [mem 0x0000000000200000-0x00000000083fffff]
+[    1.568555] [    T0]   node   0: [mem 0x0000000009400000-0x00000000efffffff]
+[    1.569190] [    T0]   node   0: [mem 0x0000000100000000-0x00000001ffffffff]
+[    1.569823] [    T0] Initmem setup node 0 [mem 0x0000000000200000-0x00000001ffffffff]
+[    1.570530] [    T0] On node 0 totalpages: 2027008
+[    1.570535] [    T0]   DMA32 zone: 15288 pages used for memmap
+[    1.570538] [    T0]   DMA32 zone: 0 pages reserved
+[    1.570541] [    T0]   DMA32 zone: 978432 pages, LIFO batch:63
+[    1.570546] [    T0]   Normal zone: 16384 pages used for memmap
+[    1.570549] [    T0]   Normal zone: 1048576 pages, LIFO batch:63
+[    1.615388] [    T0] psci: probing for conduit method from DT.
+[    1.615920] [    T0] psci: PSCIv1.1 detected in firmware.
+[    1.616402] [    T0] psci: Using standard PSCI v0.2 function IDs
+[    1.616942] [    T0] psci: Trusted OS migration not required
+[    1.617448] [    T0] psci: SMC Calling Convention v1.2
+[    1.618281] [    T0] percpu: Embedded 31 pages/cpu s88472 r8192 d30312 u126976
+[    1.618968] [    T0] pcpu-alloc: s88472 r8192 d30312 u126976 alloc=31*4096
+[    1.618974] [    T0] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+[    1.619103] [    T0] Detected VIPT I-cache on CPU0
+[    1.619562] [    T0] CPU features: detected: GIC system register CPU interface
+[    1.620210] [    T0] CPU features: detected: Virtualization Host Extensions
+[    1.620839] [    T0] CPU features: detected: ARM errata 1165522, 1319367, or 1530923
+[    1.621546] [    T0] alternatives: patching kernel code
+[    1.624026] [    T0] Built 1 zonelists, mobility grouping on.  Total pages: 1995336
+[    1.624725] [    T0] Kernel command line: storagemedia=emmc androidboot.storagemedia=emmc androidboot.mode=normal  androidboot.dtb_idx=0 androidboot.dtbo_idx=0  androidboot.verifiedbootstate=orange androidboot.serialno=9685d346b5f9ba console=ttyFIQ0 firmware_class.path=/vendor/etc/firmware init=/init rootwait ro loop.max_part=7 androidboot.console=ttyFIQ0 androidboot.wificountrycode=XS androidboot.hardware=rk30board androidboot.boot_devices=fe2e0000.mmc androidboot.selinux=permissive buildvariant=userdebug earlycon=uart8250,mmio32,0xfeb50000 irqchip.gicv3_pseudo_nmi=0
+[    1.630347] [    T0] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[    1.631516] [    T0] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    1.632348] [    T0] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    1.639090] [    T0] software IO TLB: mapped [mem 0x00000000e9f00000-0x00000000edf00000] (64MB)
+[    1.701257] [    T0] Memory: 7826040K/8108032K available (19070K kernel code, 3920K rwdata, 11064K rodata, 1344K init, 922K bss, 273800K reserved, 8192K cma-reserved)
+[    1.702694] [    T0] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+[    1.703585] [    T0] rcu: Preemptible hierarchical RCU implementation.
+[    1.704174] [    T0] rcu: 	RCU event tracing is enabled.
+[    1.704649] [    T0] 	Trampoline variant of Tasks RCU enabled.
+[    1.705172] [    T0] 	Tracing variant of Tasks RCU enabled.
+[    1.705668] [    T0] rcu: RCU calculated value of scheduler-enlistment delay is 30 jiffies.
+[    1.710133] [    T0] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    1.713293] [    T0] GICv3: GIC: Using split EOI/Deactivate mode
+[    1.713833] [    T0] GICv3: 480 SPIs implemented
+[    1.714245] [    T0] GICv3: 0 Extended SPIs implemented
+[    1.714738] [    T0] GICv3: Distributor has no Range Selector support
+[    1.715321] [    T0] GICv3: 16 PPIs implemented
+[    1.715766] [    T0] GICv3: CPU0: found redistributor 0 region 0:0x00000000fe680000
+[    1.716537] [    T0] ITS [mem 0xfe640000-0xfe65ffff]
+[    1.717021] [    T0] ITS@0x00000000fe640000: allocated 8192 Devices @1000f0000 (indirect, esz 8, psz 64K, shr 0)
+[    1.717955] [    T0] ITS@0x00000000fe640000: allocated 32768 Interrupt Collections @100100000 (flat, esz 2, psz 64K, shr 0)
+[    1.718957] [    T0] ITS: using cache flushing for cmd queue
+[    1.719489] [    T0] ITS [mem 0xfe660000-0xfe67ffff]
+[    1.719970] [    T0] ITS@0x00000000fe660000: allocated 8192 Devices @100120000 (indirect, esz 8, psz 64K, shr 0)
+[    1.720901] [    T0] ITS@0x00000000fe660000: allocated 32768 Interrupt Collections @100130000 (flat, esz 2, psz 64K, shr 0)
+[    1.721905] [    T0] ITS: using cache flushing for cmd queue
+[    1.722617] [    T0] GICv3: using LPI property table @0x0000000100140000
+[    1.723327] [    T0] GIC: using cache flushing for LPI property table
+[    1.723906] [    T0] GICv3: CPU0: using allocated LPI pending table @0x0000000100150000
+[    1.724710] [    T0] kfence: initialized - using 524288 bytes for 63 objects at 0x(____ptrval____)-0x(____ptrval____)
+[    1.725757] [    T0] random: get_random_bytes called from start_kernel+0x268/0x500 with crng_init=0
+[    1.858121] [    T0] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    1.859547] [    T0] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    1.860585] [    T0] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    1.862586] [    T0] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=80000)
+[    1.863584] [    T0] pid_max: default: 32768 minimum: 301
+[    1.864147] [    T0] LSM: Security Framework initializing
+[    1.864656] [    T0] SELinux:  Initializing.
+[    1.865111] [    T0] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    1.865876] [    T0] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    1.868424] [    T1] rcu: Hierarchical SRCU implementation.
+[    1.869235] [    T1] Platform MSI: msi-controller@fe640000 domain created
+[    1.869854] [    T1] Platform MSI: msi-controller@fe660000 domain created
+[    1.870792] [    T1] PCI/MSI: /interrupt-controller@fe600000/msi-controller@fe640000 domain created
+[    1.871619] [    T1] PCI/MSI: /interrupt-controller@fe600000/msi-controller@fe660000 domain created
+[    1.873029] [    T1] smp: Bringing up secondary CPUs ...
+[    1.874673] [    T0] CPU features: detected: Spectre-v4
+[    1.874677] [    T0] Detected PIPT I-cache on CPU1
+[    1.874693] [    T0] GICv3: CPU1: found redistributor 400 region 0:0x00000000fe700000
+[    1.874702] [    T0] GICv3: CPU1: using allocated LPI pending table @0x0000000100160000
+[    1.874725] [    T0] CPU1: Booted secondary processor 0x0000000400 [0x414fd0b0]
+[    1.875923] [    T0] Detected PIPT I-cache on CPU2
+[    1.875935] [    T0] GICv3: CPU2: found redistributor 500 region 0:0x00000000fe720000
+[    1.875944] [    T0] GICv3: CPU2: using allocated LPI pending table @0x0000000100170000
+[    1.875965] [    T0] CPU2: Booted secondary processor 0x0000000500 [0x414fd0b0]
+[    1.877114] [    T0] Detected PIPT I-cache on CPU3
+[    1.877125] [    T0] GICv3: CPU3: found redistributor 600 region 0:0x00000000fe740000
+[    1.877133] [    T0] GICv3: CPU3: using allocated LPI pending table @0x0000000100180000
+[    1.877153] [    T0] CPU3: Booted secondary processor 0x0000000600 [0x414fd0b0]
+[    1.878333] [    T0] Detected PIPT I-cache on CPU4
+[    1.878344] [    T0] GICv3: CPU4: found redistributor 700 region 0:0x00000000fe760000
+[    1.878352] [    T0] GICv3: CPU4: using allocated LPI pending table @0x0000000100190000
+[    1.878373] [    T0] CPU4: Booted secondary processor 0x0000000700 [0x414fd0b0]
+[    1.879534] [    T0] Detected VIPT I-cache on CPU5
+[    1.879550] [    T0] GICv3: CPU5: found redistributor 100 region 0:0x00000000fe6a0000
+[    1.879563] [    T0] GICv3: CPU5: using allocated LPI pending table @0x00000001001a0000
+[    1.879595] [    T0] CPU5: Booted secondary processor 0x0000000100 [0x412fd050]
+[    1.880806] [    T0] Detected VIPT I-cache on CPU6
+[    1.880823] [    T0] GICv3: CPU6: found redistributor 200 region 0:0x00000000fe6c0000
+[    1.880836] [    T0] GICv3: CPU6: using allocated LPI pending table @0x00000001001b0000
+[    1.880868] [    T0] CPU6: Booted secondary processor 0x0000000200 [0x412fd050]
+[    1.882060] [    T0] Detected VIPT I-cache on CPU7
+[    1.882077] [    T0] GICv3: CPU7: found redistributor 300 region 0:0x00000000fe6e0000
+[    1.882090] [    T0] GICv3: CPU7: using allocated LPI pending table @0x00000001001c0000
+[    1.882121] [    T0] CPU7: Booted secondary processor 0x0000000300 [0x412fd050]
+[    1.882210] [    T1] smp: Brought up 1 node, 8 CPUs
+[    1.900559] [    T1] SMP: Total of 8 processors activated.
+[    1.901051] [    T1] CPU features: detected: Privileged Access Never
+[    1.901618] [    T1] CPU features: detected: LSE atomic instructions
+[    1.902183] [    T1] CPU features: detected: User Access Override
+[    1.902726] [    T1] CPU features: detected: 32-bit EL0 Support
+[    1.903264] [    T1] CPU features: detected: Common not Private translations
+[    1.903894] [    T1] CPU features: detected: RAS Extension Support
+[    1.904445] [    T1] CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+[    1.905286] [    T1] CPU features: detected: CRC32 instructions
+[    1.905813] [    T1] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+[    1.906507] [    T1] CPU features: detected: RCpc load-acquire (LDAPR)
+[    1.939117] [    T1] CPU: All CPU(s) started at EL2
+[    1.941699] [    T1] devtmpfs: initialized
+[    1.952174] [    T1] Registered cp15_barrier emulation handler
+[    1.952176] [    T7] Trying to unpack rootfs image as initramfs...
+[    1.953258] [    T1] Registered setend emulation handler
+[    1.953736] [    T1] KASLR disabled due to lack of seed
+[    1.954268] [    T1] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
+[    1.955224] [    T1] futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+[    1.956044] [    T1] pinctrl core: initialized pinctrl subsystem
+[    1.956957] [    T1] NET: Registered protocol family 16
+[    1.958293] [    T1] DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
+[    1.959058] [    T1] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    1.959877] [    T1] audit: initializing netlink subsys (disabled)
+[    1.960530] [   T61] audit: type=2000 audit(0.093:1): state=initialized audit_enabled=0 res=1
+[    1.960938] [    T1] thermal_sys: Registered thermal governor 'fair_share'
+[    1.961301] [    T1] thermal_sys: Registered thermal governor 'step_wise'
+[    1.961920] [    T1] thermal_sys: Registered thermal governor 'user_space'
+[    1.962532] [    T1] thermal_sys: Registered thermal governor 'power_allocator'
+[    1.963262] [    T1] thermal thermal_zone1: power_allocator: sustainable_power will be estimated
+[    1.964734] [    T1] thermal thermal_zone2: power_allocator: sustainable_power will be estimated
+[    1.965549] [    T1] thermal thermal_zone3: power_allocator: sustainable_power will be estimated
+[    1.966364] [    T1] thermal thermal_zone4: power_allocator: sustainable_power will be estimated
+[    1.967176] [    T1] thermal thermal_zone5: power_allocator: sustainable_power will be estimated
+[    1.967987] [    T1] thermal thermal_zone6: power_allocator: sustainable_power will be estimated
+[    1.968803] [    T1] cpuidle: using governor menu
+[    1.969233] [    T1] Registered FIQ tty driver
+[    1.969723] [    T1] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    1.970512] [    T1] ASID allocator initialised with 65536 entries
+[    1.972766] [    T1] printk: console [ramoops-1] enabled
+[    1.973362] [    T1] pstore: Registered ramoops as persistent store backend
+[    1.973990] [    T1] ramoops: using 0xf0000@0x110000, ecc: 0
+[    1.992531] [    T7] Freeing initrd memory: 1316K
+[    2.014253] [    T1] rockchip-gpio fd8a0000.gpio: probed /pinctrl/gpio@fd8a0000
+[    2.015076] [    T1] rockchip-gpio fec20000.gpio: probed /pinctrl/gpio@fec20000
+[    2.015889] [    T1] rockchip-gpio fec30000.gpio: probed /pinctrl/gpio@fec30000
+[    2.016714] [    T1] rockchip-gpio fec40000.gpio: probed /pinctrl/gpio@fec40000
+[    2.017533] [    T1] rockchip-gpio fec50000.gpio: probed /pinctrl/gpio@fec50000
+[    2.018220] [    T1] rockchip-pinctrl pinctrl: probed pinctrl
+[    2.028317] [    T1] fiq_debugger fiq_debugger.0: IRQ fiq not found
+[    2.028887] [    T1] fiq_debugger fiq_debugger.0: IRQ wakeup not found
+[    2.029483] [    T1] fiq_debugger_probe: could not install nmi irq handler
+[    2.030135] [    T1] printk: console [ttyFIQ0] enabled
+[    2.031036] [    T1] printk: bootconsole [uart8250] disabled
+[    2.031609] [    T1] Registered fiq debugger ttyFIQ0
+[    2.031949] [    T1] vcc3v3_pcie30: supplied by vcc12v_dcin
+[    2.032011] [    T1] vcc5v0_sys: supplied by vcc12v_dcin
+[    2.032141] [    T1] vcc5v0_host: supplied by vcc5v0_sys
+[    2.032295] [    T1] vcc5v0_otg: supplied by vcc5v0_sys
+[    2.032349] [    T1] vcc_1v1_nldo_s3: supplied by vcc5v0_sys
+[    2.032520] [    T1] iommu: Default domain type: Translated 
+[    2.032575] [    T1] rk_iommu fdab9000.iommu: version = 2
+[    2.032841] [    T1] rk_iommu fdb50800.iommu: version = 2
+[    2.033032] [    T1] rk_iommu fdb60f00.iommu: version = 2
+[    2.033165] [    T1] rk_iommu fdb70f00.iommu: version = 2
+[    2.033290] [    T1] rk_iommu fdb90480.iommu: version = 2
+[    2.033435] [    T1] rk_iommu fdba0800.iommu: version = 2
+[    2.033581] [    T1] rk_iommu fdba4800.iommu: version = 2
+[    2.033726] [    T1] rk_iommu fdba8800.iommu: version = 2
+[    2.033873] [    T1] rk_iommu fdbac800.iommu: version = 2
+[    2.034020] [    T1] rk_iommu fdbb0800.iommu: version = 2
+[    2.034162] [    T1] rk_iommu fdbdf000.iommu: version = 2
+[    2.034365] [    T1] rk_iommu fdbef000.iommu: version = 2
+[    2.034588] [    T1] rk_iommu fdc38700.iommu: version = 2
+[    2.034812] [    T1] rk_iommu fdc48700.iommu: version = 2
+[    2.034919] [    T1] rk_iommu fdd97e00.iommu: version = 2
+[    2.035140] [    T1] SCSI subsystem initialized
+[    2.035154] [    T1] libata version 3.00 loaded.
+[    2.035201] [    T1] usbcore: registered new interface driver usbfs
+[    2.035215] [    T1] usbcore: registered new interface driver hub
+[    2.035227] [    T1] usbcore: registered new device driver usb
+[    2.035330] [    T1] mc: Linux media interface: v0.10
+[    2.035339] [    T1] videodev: Linux video capture interface: v2.00
+[    2.035359] [    T1] pps_core: LinuxPPS API ver. 1 registered
+[    2.035363] [    T1] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.035369] [    T1] PTP clock support registered
+[    2.035543] [    T1] arm-scmi firmware:scmi: SCMI Notifications - Core Enabled.
+[    2.035571] [    T1] arm-scmi firmware:scmi: SCMI Protocol v2.0 'rockchip:' Firmware version 0x0
+[    2.036307] [    T1] Advanced Linux Sound Architecture Driver Initialized.
+[    2.036459] [    T1] Bluetooth: Core ver 2.22
+[    2.036471] [    T1] NET: Registered protocol family 31
+[    2.036474] [    T1] Bluetooth: HCI device and connection manager initialized
+[    2.036479] [    T1] Bluetooth: HCI socket layer initialized
+[    2.036484] [    T1] Bluetooth: L2CAP socket layer initialized
+[    2.036495] [    T1] Bluetooth: SCO socket layer initialized
+[    2.037731] [    T1] rockchip-cpuinfo cpuinfo: SoC		: 35881000
+[    2.037735] [    T1] rockchip-cpuinfo cpuinfo: Serial		: d3fa9d4540ed3b99
+[    2.037960] [    T1] clocksource: Switched to clocksource arch_sys_counter
+[    2.066283] [    T1] VFS: Disk quotas dquot_6.6.0
+[    2.066316] [    T1] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.067033] [    T1] NET: Registered protocol family 2
+[    2.067231] [    T1] IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    2.069041] [    T1] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    2.069138] [    T1] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    2.069462] [    T1] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes, linear)
+[    2.070133] [    T1] TCP: Hash tables configured (established 65536 bind 65536)
+[    2.070183] [    T1] UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    2.070310] [    T1] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    2.070477] [    T1] NET: Registered protocol family 1
+[    2.070736] [    T1] PCI: CLS 0 bytes, default 64
+[    2.071469] [    T1] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    2.073258] [    T1] Initialise system trusted keyrings
+[    2.073314] [    T1] workingset: timestamp_bits=46 max_order=21 bucket_order=0
+[    2.074702] [    T1] utf8_selftest: All 154 tests passed
+[    2.074708] [    T1] fuse: init (API version 7.32)
+[    2.094701] [    T1] Key type asymmetric registered
+[    2.094710] [    T1] Asymmetric key parser 'x509' registered
+[    2.094726] [    T1] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 242)
+[    2.094730] [    T1] io scheduler mq-deadline registered
+[    2.094736] [    T1] io scheduler kyber registered
+[    2.094772] [    T1] io scheduler bfq registered
+[    2.102512] [    T1] rockchip-hdptx-phy-hdmi fed60000.hdmiphy: hdptx phy init success
+[    2.103982] [  T143] rk-pcie fe170000.pcie: invalid prsnt-gpios property in node
+[    2.104008] [  T143] rk-pcie fe170000.pcie: no vpcie3v3 regulator found
+[    2.104068] [    T1] iep: Module initialized.
+[    2.104095] [    T1] mpp_service mpp-srv: aa1f2eb72b83 author: Yandong Lin 2022-07-01 video: rockchip: mpp: fix vepu access ccu crash issue
+[    2.104099] [    T1] mpp_service mpp-srv: probe start
+[    2.104233] [  T143] rk-pcie fe170000.pcie: missing legacy IRQ resource
+[    2.104253] [  T143] rk-pcie fe170000.pcie: IRQ msi not found
+[    2.104262] [  T143] rk-pcie fe170000.pcie: use outband MSI support
+[    2.104271] [  T143] rk-pcie fe170000.pcie: Missing *config* reg space
+[    2.104285] [  T143] rk-pcie fe170000.pcie: host bridge /pcie@fe170000 ranges:
+[    2.104306] [  T143] rk-pcie fe170000.pcie:      err 0x00f2000000..0x00f20fffff -> 0x00f2000000
+[    2.104322] [  T143] rk-pcie fe170000.pcie:       IO 0x00f2100000..0x00f21fffff -> 0x00f2100000
+[    2.104340] [  T143] rk-pcie fe170000.pcie:      MEM 0x00f2200000..0x00f2ffffff -> 0x00f2200000
+[    2.104353] [  T143] rk-pcie fe170000.pcie:      MEM 0x0980000000..0x09bfffffff -> 0x0980000000
+[    2.104381] [  T143] rk-pcie fe170000.pcie: Missing *config* reg space
+[    2.104409] [  T143] rk-pcie fe170000.pcie: invalid resource
+[    2.104909] [    T1] mpp_vdpu1 fdb51000.avsd-plus: Adding to iommu group 1
+[    2.105062] [    T1] mpp_vdpu1 fdb51000.avsd-plus: probe device
+[    2.105147] [    T1] mpp_vdpu1 fdb51000.avsd-plus: reset_group->rw_sem_on=0
+[    2.105153] [    T1] mpp_vdpu1 fdb51000.avsd-plus: reset_group->rw_sem_on=0
+[    2.105240] [    T1] mpp_vdpu1 fdb51000.avsd-plus: probing finish
+[    2.105483] [    T1] mpp_vdpu2 fdb50400.vdpu: Adding to iommu group 1
+[    2.105567] [    T1] mpp_vdpu2 fdb50400.vdpu: probe device
+[    2.105635] [    T1] mpp_vdpu2 fdb50400.vdpu: reset_group->rw_sem_on=0
+[    2.105639] [    T1] mpp_vdpu2 fdb50400.vdpu: reset_group->rw_sem_on=0
+[    2.105697] [    T1] mpp_vdpu2 fdb50400.vdpu: probing finish
+[    2.105807] [    T1] mpp_vepu2 jpege-ccu: probing start
+[    2.105811] [    T1] mpp_vepu2 jpege-ccu: probing finish
+[    2.105900] [    T1] mpp_vepu2 fdba0000.jpege-core: Adding to iommu group 5
+[    2.105973] [    T1] mpp_vepu2 fdba0000.jpege-core: probing start
+[    2.106052] [    T1] mpp_vepu2 fdba0000.jpege-core: attach ccu success
+[    2.106118] [    T1] mpp_vepu2 fdba0000.jpege-core: probing finish
+[    2.106167] [    T1] mpp_vepu2 fdba4000.jpege-core: Adding to iommu group 6
+[    2.106241] [    T1] mpp_vepu2 fdba4000.jpege-core: probing start
+[    2.106314] [    T1] mpp_vepu2 fdba4000.jpege-core: attach ccu success
+[    2.106376] [    T1] mpp_vepu2 fdba4000.jpege-core: probing finish
+[    2.106424] [    T1] mpp_vepu2 fdba8000.jpege-core: Adding to iommu group 7
+[    2.106501] [    T1] mpp_vepu2 fdba8000.jpege-core: probing start
+[    2.106571] [    T1] mpp_vepu2 fdba8000.jpege-core: attach ccu success
+[    2.106632] [    T1] mpp_vepu2 fdba8000.jpege-core: probing finish
+[    2.106680] [    T1] mpp_vepu2 fdbac000.jpege-core: Adding to iommu group 8
+[    2.106760] [    T1] mpp_vepu2 fdbac000.jpege-core: probing start
+[    2.106833] [    T1] mpp_vepu2 fdbac000.jpege-core: attach ccu success
+[    2.106896] [    T1] mpp_vepu2 fdbac000.jpege-core: probing finish
+[    2.107060] [    T1] mpp-iep2 fdbb0000.iep: Adding to iommu group 9
+[    2.107135] [    T1] mpp-iep2 fdbb0000.iep: probe device
+[    2.107229] [    T1] mpp-iep2 fdbb0000.iep: allocate roi buffer failed
+[    2.107284] [    T1] mpp-iep2 fdbb0000.iep: probing finish
+[    2.107408] [    T1] mpp_jpgdec fdb90000.jpegd: Adding to iommu group 4
+[    2.107546] [    T1] mpp_jpgdec fdb90000.jpegd: probe device
+[    2.107684] [    T1] mpp_jpgdec fdb90000.jpegd: probing finish
+[    2.107964] [    T1] mpp_rkvdec2 fdc30000.rkvdec-ccu: rkvdec-ccu, probing start
+[    2.108008] [    T1] mpp_rkvdec2 fdc30000.rkvdec-ccu: probing finish
+[    2.108065] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: Adding to iommu group 12
+[    2.108298] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: rkvdec-core, probing start
+[    2.108383] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: shared_niu_a is not found!
+[    2.108387] [    T1] rkvdec2_init:697: No niu aclk reset resource define
+[    2.108391] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: shared_niu_h is not found!
+[    2.108395] [    T1] rkvdec2_init:700: No niu hclk reset resource define
+[    2.108446] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: core_mask=00010001
+[    2.108449] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: attach ccu as core 0
+[    2.108671] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: sram_start 0x00000000ff001000
+[    2.108675] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_iova 0x00000000fff00000
+[    2.108679] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: sram_size 491520
+[    2.108683] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_size 1048576
+[    2.108687] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: min_width 512
+[    2.108710] [    T1] mpp_rkvdec2 fdc38100.rkvdec-core: probing finish
+[    2.108769] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: Adding to iommu group 13
+[    2.108973] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: rkvdec-core, probing start
+[    2.109055] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: shared_niu_a is not found!
+[    2.109059] [    T1] rkvdec2_init:697: No niu aclk reset resource define
+[    2.109063] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: shared_niu_h is not found!
+[    2.109066] [    T1] rkvdec2_init:700: No niu hclk reset resource define
+[    2.109104] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: core_mask=00020002
+[    2.109119] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: attach ccu as core 1
+[    2.109357] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: sram_start 0x00000000ff079000
+[    2.109361] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_iova 0x00000000ffe00000
+[    2.109365] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: sram_size 487424
+[    2.109368] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_size 1048576
+[    2.109373] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: min_width 512
+[    2.109395] [    T1] mpp_rkvdec2 fdc48100.rkvdec-core: probing finish
+[    2.109540] [    T1] mpp_rkvenc2 rkvenc-ccu: probing start
+[    2.109545] [    T1] mpp_rkvenc2 rkvenc-ccu: probing finish
+[    2.109630] [    T1] mpp_rkvenc2 fdbd0000.rkvenc-core: Adding to iommu group 10
+[    2.109793] [    T1] mpp_rkvenc2 fdbd0000.rkvenc-core: probing start
+[    2.109807] [    T1] mpp_rkvenc2 fdbd0000.rkvenc-core: link mode task capacity 8
+[    2.109916] [    T1] mpp_rkvenc2 fdbd0000.rkvenc-core: attach ccu as core 0
+[    2.110000] [    T1] mpp_rkvenc2 fdbd0000.rkvenc-core: probing finish
+[    2.110043] [    T1] mpp_rkvenc2 fdbe0000.rkvenc-core: Adding to iommu group 11
+[    2.110262] [    T1] mpp_rkvenc2 fdbe0000.rkvenc-core: probing start
+[    2.110275] [    T1] mpp_rkvenc2 fdbe0000.rkvenc-core: link mode task capacity 8
+[    2.110399] [    T1] mpp_rkvenc2 fdbe0000.rkvenc-core: attach ccu as core 1
+[    2.110464] [    T1] mpp_rkvenc2 fdbe0000.rkvenc-core: probing finish
+[    2.110848] [    T1] mpp_av1dec: Adding child /av1d@fdc70000
+[    2.111032] [    T1] mpp_av1dec: register device av1d-master
+[    2.111045] [    T1] mpp_av1dec av1d-master: av1_iommu_of_xlate,784
+[    2.111060] [    T1] av1_iommu_probe_device,737, consumer : av1d-master, supplier : fdca0000.iommu
+[    2.111067] [    T1] mpp_av1dec av1d-master: Adding to iommu group 15
+[    2.111300] [    T1] mpp_av1dec av1d-master: probing start
+[    2.111468] [    T1] mpp_av1dec av1d-master: probing finish
+[    2.111494] [    T1] mpp_service mpp-srv: probe success
+[    2.118428] [    T1] dma-pl330 fea10000.dma-controller: Loaded driver for PL330 DMAC-241330
+[    2.118436] [    T1] dma-pl330 fea10000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[    2.119097] [    T1] dma-pl330 fea30000.dma-controller: Loaded driver for PL330 DMAC-241330
+[    2.119104] [    T1] dma-pl330 fea30000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[    2.119777] [    T1] dma-pl330 fed10000.dma-controller: Loaded driver for PL330 DMAC-241330
+[    2.119783] [    T1] dma-pl330 fed10000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[    2.120034] [    T1] rockchip-pvtm fda40000.pvtm: pvtm@0 probed
+[    2.120077] [    T1] rockchip-pvtm fda50000.pvtm: pvtm@1 probed
+[    2.120115] [    T1] rockchip-pvtm fda60000.pvtm: pvtm@2 probed
+[    2.120157] [    T1] rockchip-pvtm fdaf0000.pvtm: pvtm@3 probed
+[    2.120192] [    T1] rockchip-pvtm fdb30000.pvtm: pvtm@4 probed
+[    2.120506] [    T1] rockchip-system-monitor rockchip-system-monitor: system monitor probe
+[    2.121157] [    T1] Serial: 8250/16550 driver, 10 ports, IRQ sharing disabled
+[    2.121637] [    T1] febc0000.serial: ttyS9 at MMIO 0xfebc0000 (irq = 81, base_baud = 1500000) is a 16550A
+[    2.122103] [  T167] random: fast init done
+[    2.122192] [  T167] random: crng init done
+[    2.122588] [    T1] rockchip-vop2 fdd90000.vop: Adding to iommu group 14
+[    2.127391] [    T1] rockchip-vop2 fdd90000.vop: [drm:vop2_bind] vp0 assign plane mask: 0x5, primary plane phy id: 2
+[    2.127402] [    T1] rockchip-vop2 fdd90000.vop: [drm:vop2_bind] vp1 assign plane mask: 0xa, primary plane phy id: 3
+[    2.127415] [    T1] rockchip-vop2 fdd90000.vop: [drm:vop2_bind] vp2 assign plane mask: 0x140, primary plane phy id: 8
+[    2.127423] [    T1] rockchip-vop2 fdd90000.vop: [drm:vop2_bind] vp3 assign plane mask: 0x280, primary plane phy id: 9
+[    2.127497] [    T1] rockchip-drm display-subsystem: failed to get hdmi1_phy_pll: -517
+[    2.138292] [    T1] rockchip-drm display-subsystem: bound fdd90000.vop (ops vop2_component_ops)
+[    2.138782] [    T1] dwhdmi-rockchip fde80000.hdmi: registered ddc I2C bus driver
+[    2.138931] [    T1] rockchip-drm display-subsystem: bound fde80000.hdmi (ops dw_hdmi_rockchip_ops)
+[    2.138987] [    T1] rockchip-drm display-subsystem: bound fde60000.dp (ops dw_dp_component_ops)
+[    2.139382] [    T1] get_framebuffer_by_node: failed to get logo,offset
+[    2.243933] [    T1] dwhdmi-rockchip fde80000.hdmi: use tmds mode
+[    2.243958] [    T1] dwhdmi-rockchip fde80000.hdmi: use tmds mode
+[    2.309106] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.334651] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.361318] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.383849] [    T1] dw-dp fde60000.dp: failed to probe DP link: -110
+[    2.387986] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.389195] [    T1] rockchip-drm display-subsystem: [drm] fb0: rockchipdrmfb frame buffer device
+[    2.389571] [    T1] [drm] Initialized rockchip 3.0.0 20140818 for display-subsystem on minor 0
+[    2.397813] [    T1] brd: module loaded
+[    2.402664] [    T1] loop: module loaded
+[    2.402811] [    T1] zram: Added device: zram0
+[    2.402917] [    T1] system_heap: orders[0] = 6
+[    2.402921] [    T1] system_heap: orders[1] = 4
+[    2.402925] [    T1] system_heap: orders[2] = 0
+[    2.403227] [    T1] SCSI Media Changer driver v0.25 
+[    2.404616] [    T1] rockchip-spi feb20000.spi: no high_speed pinctrl state
+[    2.405582] [    T1] rk806 spi2.0: chip id: RK806,ver:0x2, 0x1
+[    2.405702] [    T1] rk806 spi2.0: ON: 0x40 OFF:0x0
+[    2.407092] [    T1] vdd_gpu_s0: supplied by vcc5v0_sys
+[    2.408022] [    T1] vdd_cpu_lit_s0: supplied by vcc5v0_sys
+[    2.408493] [    T1] vdd_log_s0: supplied by vcc5v0_sys
+[    2.408952] [    T1] vdd_vdenc_s0: supplied by vcc5v0_sys
+[    2.409472] [    T1] vdd_ddr_s0: supplied by vcc5v0_sys
+[    2.409746] [    T1] vdd2_ddr_s3: supplied by vcc5v0_sys
+[    2.410201] [    T1] vdd_2v0_pldo_s3: supplied by vcc5v0_sys
+[    2.410606] [    T1] vcc_3v3_s3: supplied by vcc5v0_sys
+[    2.410980] [    T1] vddq_ddr_s0: supplied by vcc5v0_sys
+[    2.411437] [    T1] vcc_1v8_s3: supplied by vcc5v0_sys
+[    2.411922] [    T1] vdd_0v75_s3: supplied by vcc_1v1_nldo_s3
+[    2.412390] [    T1] vdd_ddr_pll_s0: supplied by vcc_1v1_nldo_s3
+[    2.412558] [   T15] dw-dp fde60000.dp: failed to probe DP link: -110
+[    2.412783] [    T1] avdd_0v75_s0: supplied by vcc_1v1_nldo_s3
+[    2.413169] [    T1] vdd_0v85_s0: supplied by vcc_1v1_nldo_s3
+[    2.413562] [    T1] vdd_0v75_s0: supplied by vcc_1v1_nldo_s3
+[    2.414044] [    T1] avcc_1v8_s0: supplied by vdd_2v0_pldo_s3
+[    2.414551] [    T1] vcc_1v8_s0: supplied by vdd_2v0_pldo_s3
+[    2.414661] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.415033] [    T1] avdd_1v2_s0: supplied by vdd_2v0_pldo_s3
+[    2.415500] [    T1] vcc_3v3_s0: supplied by vcc5v0_sys
+[    2.415892] [    T1] vccio_sd_s0: supplied by vcc5v0_sys
+[    2.416300] [    T1] pldo6_s3: supplied by vcc5v0_sys
+[    2.416683] [    T1] rk806 spi2.0: no sleep-setting state
+[    2.416689] [    T1] rk806 spi2.0: no reset-setting pinctrl state
+[    2.416693] [    T1] rk806 spi2.0: no dvs-setting pinctrl state
+[    2.418570] [    T1] libphy: Fixed MDIO Bus: probed
+[    2.418625] [    T1] tun: Universal TUN/TAP device driver, 1.6
+[    2.419170] [    T1] rk_gmac-dwmac fe1c0000.ethernet: IRQ eth_lpi not found
+[    2.419295] [    T1] rk_gmac-dwmac fe1c0000.ethernet: no regulator found
+[    2.419300] [    T1] rk_gmac-dwmac fe1c0000.ethernet: clock input or output? (output).
+[    2.419305] [    T1] rk_gmac-dwmac fe1c0000.ethernet: TX delay(0x42).
+[    2.419310] [    T1] rk_gmac-dwmac fe1c0000.ethernet: Can not read property: rx_delay.
+[    2.419315] [    T1] rk_gmac-dwmac fe1c0000.ethernet: set rx_delay to 0xffffffff
+[    2.419326] [    T1] rk_gmac-dwmac fe1c0000.ethernet: integrated PHY? (no).
+[    2.419332] [    T1] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock mac_clk_rx
+[    2.419337] [    T1] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock mac_clk_tx
+[    2.419349] [    T1] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock clk_mac_speed
+[    2.419564] [    T1] rk_gmac-dwmac fe1c0000.ethernet: init for RGMII_RXID
+[    2.419642] [    T1] rk_gmac-dwmac fe1c0000.ethernet: User ID: 0x30, Synopsys ID: 0x51
+[    2.419648] [    T1] rk_gmac-dwmac fe1c0000.ethernet: 	DWMAC4/5
+[    2.419654] [    T1] rk_gmac-dwmac fe1c0000.ethernet: DMA HW capability register supported
+[    2.419659] [    T1] rk_gmac-dwmac fe1c0000.ethernet: RX Checksum Offload Engine supported
+[    2.419663] [    T1] rk_gmac-dwmac fe1c0000.ethernet: TX Checksum insertion supported
+[    2.419667] [    T1] rk_gmac-dwmac fe1c0000.ethernet: Wake-Up On Lan supported
+[    2.419695] [    T1] rk_gmac-dwmac fe1c0000.ethernet: TSO supported
+[    2.419700] [    T1] rk_gmac-dwmac fe1c0000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[    2.419705] [    T1] rk_gmac-dwmac fe1c0000.ethernet: Enabled Flow TC (entries=2)
+[    2.419710] [    T1] rk_gmac-dwmac fe1c0000.ethernet: TSO feature enabled
+[    2.419714] [    T1] rk_gmac-dwmac fe1c0000.ethernet: Using 32 bits DMA width
+[    2.441318] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.467984] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.494651] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.521316] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.547983] [  T143] rk-pcie fe170000.pcie: PCIe Linking... LTSSM is 0x3
+[    2.551296] [    T1] libphy: stmmac: probed
+[    2.551987] [    T1] PPP generic driver version 2.4.2
+[    2.552048] [    T1] PPP BSD Compression module registered
+[    2.552052] [    T1] PPP Deflate Compression module registered
+[    2.552063] [    T1] PPP MPPE Compression module registered
+[    2.552068] [    T1] NET: Registered protocol family 24
+[    2.552078] [    T1] PPTP driver version 0.8.5
+[    2.552266] [    T1] usbcore: registered new interface driver catc
+[    2.552281] [    T1] usbcore: registered new interface driver kaweth
+[    2.552285] [    T1] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+[    2.552297] [    T1] usbcore: registered new interface driver pegasus
+[    2.552310] [    T1] usbcore: registered new interface driver rtl8150
+[    2.552327] [    T1] usbcore: registered new interface driver r8152
+[    2.552331] [    T1] hso: drivers/net/usb/hso.c: Option Wireless
+[    2.552351] [    T1] usbcore: registered new interface driver hso
+[    2.552365] [    T1] usbcore: registered new interface driver asix
+[    2.552378] [    T1] usbcore: registered new interface driver ax88179_178a
+[    2.552391] [    T1] usbcore: registered new interface driver cdc_ether
+[    2.552402] [    T1] usbcore: registered new interface driver cdc_eem
+[    2.552415] [    T1] usbcore: registered new interface driver dm9601
+[    2.552430] [    T1] usbcore: registered new interface driver smsc75xx
+[    2.552446] [    T1] usbcore: registered new interface driver smsc95xx
+[    2.552459] [    T1] usbcore: registered new interface driver gl620a
+[    2.552471] [    T1] usbcore: registered new interface driver net1080
+[    2.552483] [    T1] usbcore: registered new interface driver plusb
+[    2.552496] [    T1] usbcore: registered new interface driver rndis_host
+[    2.552510] [    T1] usbcore: registered new interface driver cdc_subset
+[    2.552521] [    T1] usbcore: registered new interface driver zaurus
+[    2.552534] [    T1] usbcore: registered new interface driver MOSCHIP usb-ethernet driver
+[    2.552548] [    T1] usbcore: registered new interface driver int51x1
+[    2.552560] [    T1] usbcore: registered new interface driver kalmia
+[    2.552573] [    T1] usbcore: registered new interface driver ipheth
+[    2.552587] [    T1] usbcore: registered new interface driver sierra_net
+[    2.552600] [    T1] usbcore: registered new interface driver cx82310_eth
+[    2.552615] [    T1] usbcore: registered new interface driver cdc_ncm
+[    2.552628] [    T1] usbcore: registered new interface driver qmi_wwan
+[    2.552641] [    T1] usbcore: registered new interface driver cdc_mbim
+[    2.560055] [    T1] naneng-combphy fee20000.phy: wait phy status ready timeout
+[    2.565201] [    T1] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.565208] [    T1] ehci-pci: EHCI PCI platform driver
+[    2.565230] [    T1] ehci-platform: EHCI generic platform driver
+[    2.567600] [    T1] ehci-platform fc800000.usb: EHCI Host Controller
+[    2.567658] [    T1] ehci-platform fc800000.usb: new USB bus registered, assigned bus number 1
+[    2.567703] [    T1] ehci-platform fc800000.usb: irq 20, io mem 0xfc800000
+[    2.577968] [    T1] ehci-platform fc800000.usb: USB 2.0 started, EHCI 1.00
+[    2.578030] [    T1] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    2.578036] [    T1] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.578040] [    T1] usb usb1: Product: EHCI Host Controller
+[    2.578045] [    T1] usb usb1: Manufacturer: Linux 5.10.66 ehci_hcd
+[    2.578049] [    T1] usb usb1: SerialNumber: fc800000.usb
+[    2.578225] [    T1] hub 1-0:1.0: USB hub found
+[    2.578238] [    T1] hub 1-0:1.0: 1 port detected
+[    2.580683] [    T1] ehci-platform fc880000.usb: EHCI Host Controller
+[    2.580742] [    T1] ehci-platform fc880000.usb: new USB bus registered, assigned bus number 2
+[    2.580782] [    T1] ehci-platform fc880000.usb: irq 22, io mem 0xfc880000
+[    2.591301] [    T1] ehci-platform fc880000.usb: USB 2.0 started, EHCI 1.00
+[    2.591349] [    T1] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    2.591355] [    T1] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.591359] [    T1] usb usb2: Product: EHCI Host Controller
+[    2.591363] [    T1] usb usb2: Manufacturer: Linux 5.10.66 ehci_hcd
+[    2.591367] [    T1] usb usb2: SerialNumber: fc880000.usb
+[    2.591511] [    T1] hub 2-0:1.0: USB hub found
+[    2.591522] [    T1] hub 2-0:1.0: 1 port detected
+[    2.591779] [    T1] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.591789] [    T1] ohci-platform: OHCI generic platform driver
+[    2.591899] [    T1] ohci-platform fc840000.usb: Generic Platform OHCI controller
+[    2.591955] [    T1] ohci-platform fc840000.usb: new USB bus registered, assigned bus number 3
+[    2.591991] [    T1] ohci-platform fc840000.usb: irq 21, io mem 0xfc840000
+[    2.652023] [    T1] usb usb3: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.10
+[    2.652030] [    T1] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.652035] [    T1] usb usb3: Product: Generic Platform OHCI controller
+[    2.652039] [    T1] usb usb3: Manufacturer: Linux 5.10.66 ohci_hcd
+[    2.652043] [    T1] usb usb3: SerialNumber: fc840000.usb
+[    2.652186] [    T1] hub 3-0:1.0: USB hub found
+[    2.652198] [    T1] hub 3-0:1.0: 1 port detected
+[    2.652383] [    T1] ohci-platform fc8c0000.usb: Generic Platform OHCI controller
+[    2.652437] [    T1] ohci-platform fc8c0000.usb: new USB bus registered, assigned bus number 4
+[    2.652476] [    T1] ohci-platform fc8c0000.usb: irq 23, io mem 0xfc8c0000
+[    2.712024] [    T1] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.10
+[    2.712032] [    T1] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.712036] [    T1] usb usb4: Product: Generic Platform OHCI controller
+[    2.712041] [    T1] usb usb4: Manufacturer: Linux 5.10.66 ohci_hcd
+[    2.712045] [    T1] usb usb4: SerialNumber: fc8c0000.usb
+[    2.712188] [    T1] hub 4-0:1.0: USB hub found
+[    2.712200] [    T1] hub 4-0:1.0: 1 port detected
+[    2.712598] [    T1] xhci-hcd xhci-hcd.7.auto: xHCI Host Controller
+[    2.712656] [    T1] xhci-hcd xhci-hcd.7.auto: new USB bus registered, assigned bus number 5
+[    2.712739] [    T1] xhci-hcd xhci-hcd.7.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000002002010010
+[    2.712757] [    T1] xhci-hcd xhci-hcd.7.auto: irq 108, io mem 0xfc000000
+[    2.712868] [    T1] usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    2.712873] [    T1] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.712877] [    T1] usb usb5: Product: xHCI Host Controller
+[    2.712881] [    T1] usb usb5: Manufacturer: Linux 5.10.66 xhci-hcd
+[    2.712885] [    T1] usb usb5: SerialNumber: xhci-hcd.7.auto
+[    2.713029] [    T1] hub 5-0:1.0: USB hub found
+[    2.713041] [    T1] hub 5-0:1.0: 1 port detected
+[    2.713138] [    T1] xhci-hcd xhci-hcd.7.auto: xHCI Host Controller
+[    2.713187] [    T1] xhci-hcd xhci-hcd.7.auto: new USB bus registered, assigned bus number 6
+[    2.713194] [    T1] xhci-hcd xhci-hcd.7.auto: Host supports USB 3.0 SuperSpeed
+[    2.713217] [    T1] usb usb6: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.713252] [    T1] usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.10
+[    2.713257] [    T1] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.713261] [    T1] usb usb6: Product: xHCI Host Controller
+[    2.713265] [    T1] usb usb6: Manufacturer: Linux 5.10.66 xhci-hcd
+[    2.713269] [    T1] usb usb6: SerialNumber: xhci-hcd.7.auto
+[    2.713406] [    T1] hub 6-0:1.0: USB hub found
+[    2.713417] [    T1] hub 6-0:1.0: 1 port detected
+[    2.713568] [    T1] xhci-hcd xhci-hcd.8.auto: xHCI Host Controller
+[    2.713622] [    T1] xhci-hcd xhci-hcd.8.auto: new USB bus registered, assigned bus number 7
+[    2.713683] [    T1] xhci-hcd xhci-hcd.8.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000000002010010
+[    2.713699] [    T1] xhci-hcd xhci-hcd.8.auto: irq 109, io mem 0xfcd00000
+[    2.713799] [    T1] usb usb7: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    2.713804] [    T1] usb usb7: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.713808] [    T1] usb usb7: Product: xHCI Host Controller
+[    2.713812] [    T1] usb usb7: Manufacturer: Linux 5.10.66 xhci-hcd
+[    2.713816] [    T1] usb usb7: SerialNumber: xhci-hcd.8.auto
+[    2.713952] [    T1] hub 7-0:1.0: USB hub found
+[    2.713963] [    T1] hub 7-0:1.0: 1 port detected
+[    2.714055] [    T1] xhci-hcd xhci-hcd.8.auto: xHCI Host Controller
+[    2.714106] [    T1] xhci-hcd xhci-hcd.8.auto: new USB bus registered, assigned bus number 8
+[    2.714113] [    T1] xhci-hcd xhci-hcd.8.auto: Host supports USB 3.0 SuperSpeed
+[    2.714133] [    T1] usb usb8: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.714170] [    T1] usb usb8: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.10
+[    2.714174] [    T1] usb usb8: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.714178] [    T1] usb usb8: Product: xHCI Host Controller
+[    2.714183] [    T1] usb usb8: Manufacturer: Linux 5.10.66 xhci-hcd
+[    2.714186] [    T1] usb usb8: SerialNumber: xhci-hcd.8.auto
+[    2.714320] [    T1] hub 8-0:1.0: USB hub found
+[    2.714331] [    T1] hub 8-0:1.0: 1 port detected
+[    2.714479] [    T1] phy phy-fd5d4000.syscon:usb2-phy@4000.3: illegal mode
+[    2.714486] [    T1] xhci-hcd xhci-hcd.9.auto: xHCI Host Controller
+[    2.714545] [    T1] xhci-hcd xhci-hcd.9.auto: new USB bus registered, assigned bus number 9
+[    2.714618] [    T1] xhci-hcd xhci-hcd.9.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000000002010010
+[    2.714644] [    T1] xhci-hcd xhci-hcd.9.auto: irq 110, io mem 0xfc400000
+[    2.714746] [    T1] usb usb9: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    2.714751] [    T1] usb usb9: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.714755] [    T1] usb usb9: Product: xHCI Host Controller
+[    2.714759] [    T1] usb usb9: Manufacturer: Linux 5.10.66 xhci-hcd
+[    2.714764] [    T1] usb usb9: SerialNumber: xhci-hcd.9.auto
+[    2.714901] [    T1] hub 9-0:1.0: USB hub found
+[    2.714912] [    T1] hub 9-0:1.0: 1 port detected
+[    2.715006] [    T1] xhci-hcd xhci-hcd.9.auto: xHCI Host Controller
+[    2.715055] [    T1] xhci-hcd xhci-hcd.9.auto: new USB bus registered, assigned bus number 10
+[    2.715062] [    T1] xhci-hcd xhci-hcd.9.auto: Host supports USB 3.0 SuperSpeed
+[    2.715087] [    T1] usb usb10: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.715122] [    T1] usb usb10: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.10
+[    2.715127] [    T1] usb usb10: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.715131] [    T1] usb usb10: Product: xHCI Host Controller
+[    2.715136] [    T1] usb usb10: Manufacturer: Linux 5.10.66 xhci-hcd
+[    2.715140] [    T1] usb usb10: SerialNumber: xhci-hcd.9.auto
+[    2.715279] [    T1] hub 10-0:1.0: USB hub found
+[    2.715292] [    T1] hub 10-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[    2.715407] [    T1] usbcore: registered new interface driver cdc_acm
+[    2.715412] [    T1] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    2.715435] [    T1] usbcore: registered new interface driver usblp
+[    2.715452] [    T1] usbcore: registered new interface driver cdc_wdm
+[    2.715546] [    T1] usbcore: registered new interface driver uas
+[    2.715593] [    T1] usbcore: registered new interface driver usb-storage
+[    2.715616] [    T1] usbcore: registered new interface driver ums-alauda
+[    2.715631] [    T1] usbcore: registered new interface driver ums-cypress
+[    2.715646] [    T1] usbcore: registered new interface driver ums-datafab
+[    2.715660] [    T1] usbcore: registered new interface driver ums_eneub6250
+[    2.715675] [    T1] usbcore: registered new interface driver ums-freecom
+[    2.715690] [    T1] usbcore: registered new interface driver ums-isd200
+[    2.715704] [    T1] usbcore: registered new interface driver ums-jumpshot
+[    2.715719] [    T1] usbcore: registered new interface driver ums-karma
+[    2.715734] [    T1] usbcore: registered new interface driver ums-onetouch
+[    2.715749] [    T1] usbcore: registered new interface driver ums-sddr09
+[    2.715763] [    T1] usbcore: registered new interface driver ums-sddr55
+[    2.715778] [    T1] usbcore: registered new interface driver ums-usbat
+[    2.715812] [    T1] usbcore: registered new interface driver usbserial_generic
+[    2.715821] [    T1] usbserial: USB Serial support registered for generic
+[    2.715838] [    T1] usbcore: registered new interface driver option
+[    2.715847] [    T1] usbserial: USB Serial support registered for GSM modem (1-port)
+[    2.715957] [    T1] usbcore: registered new interface driver trancevibrator
+[    2.716204] [    T1] usbcore: registered new interface driver xpad
+[    2.716223] [    T1] usbcore: registered new interface driver usb_acecad
+[    2.716239] [    T1] usbcore: registered new interface driver aiptek
+[    2.716254] [    T1] usbcore: registered new interface driver gtco
+[    2.716269] [    T1] usbcore: registered new interface driver hanwang
+[    2.716285] [    T1] usbcore: registered new interface driver kbtab
+[    2.716432] [    T1] .. rk pwm remotectl v2.0 init
+[    2.716534] [    T1] input: fd8b0030.pwm as /devices/platform/fd8b0030.pwm/input/input0
+[    2.716647] [    T1] remotectl-pwm fd8b0030.pwm: pwm version is 0x2130000
+[    2.716668] [    T1] remotectl-pwm fd8b0030.pwm: Controller support pwrkey capture
+[    2.717749] [    T1] input: rk805 pwrkey as /devices/platform/feb20000.spi/spi_master/spi2/spi2.0/rk805-pwrkey.5.auto/input/input1
+[    2.717917] [    T1] i2c /dev entries driver
+[    2.721401] [    T1] vdd_cpu_big0_s0: supplied by vcc5v0_sys
+[    2.728516] [    T1] vdd_cpu_big1_s0: supplied by vcc5v0_sys
+[    2.736113] [    T1] vdd_npu_s0: supplied by vcc5v0_sys
+[    2.745206] [    T1] rtc-hym8563 6-0051: rtc information is invalid
+[    2.752223] [    T1] rtc-hym8563 6-0051: registered as rtc0
+[    2.753254] [    T1] rtc-hym8563 6-0051: setting system clock to 2021-01-01T12:00:00 UTC (1609502400)
+[    2.760362] [    T1] usbcore: registered new interface driver uvcvideo
+[    2.760375] [    T1] USB Video Class driver (1.1.1)
+[    2.761490] [    T1] __power_supply_register: Expected proper parent device for 'test_ac'
+[    2.761743] [    T1] __power_supply_register: Expected proper parent device for 'test_battery'
+[    2.762041] [    T1] thermal thermal_zone7: power_allocator: sustainable_power will be estimated
+[    2.762211] [    T1] __power_supply_register: Expected proper parent device for 'test_usb'
+[    2.763910] [    T1] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
+[    2.764844] [    T1] rockchip-thermal fec00000.tsadc: tsadc is probed successfully!
+[    2.765416] [    T1] device-mapper: uevent: version 1.0.3
+[    2.765627] [    T1] device-mapper: ioctl: 4.44.0-ioctl (2021-02-01) initialised: dm-devel@redhat.com
+[    2.765726] [    T1] Bluetooth: HCI UART driver ver 2.3
+[    2.765734] [    T1] Bluetooth: HCI UART protocol H4 registered
+[    2.766062] [    T1] cpu cpu0: leakage=9
+[    2.767514] [    T1] cpu cpu0: pvtm=1477
+[    2.767574] [    T1] cpu cpu0: pvtm-volt-sel=3
+[    2.768010] [    T1] cpu cpu1: leakage=8
+[    2.774466] [    T1] cpu cpu1: pvtm=1696
+[    2.778360] [    T1] cpu cpu1: pvtm-volt-sel=4
+[    2.779554] [    T1] cpu cpu3: leakage=8
+[    2.786025] [    T1] cpu cpu3: pvtm=1691
+[    2.789936] [    T1] cpu cpu3: pvtm-volt-sel=4
+[    2.791229] [    T1] cpu cpu0: avs=0
+[    2.791593] [    T1] cpu cpu1: avs=0
+[    2.791943] [    T1] cpu cpu3: avs=0
+[    2.792102] [    T1] cpu cpu0: EM: created perf domain
+[    2.792139] [    T1] cpu cpu0: l=10000 h=85000 hyst=5000 l_limit=0 h_limit=1608000000 h_table=0
+[    2.792604] [    T1] cpu cpu1: EM: created perf domain
+[    2.792638] [    T1] cpu cpu1: l=10000 h=85000 hyst=5000 l_limit=0 h_limit=2208000000 h_table=0
+[    2.800711] [    T1] cpu cpu3: EM: created perf domain
+[    2.800748] [    T1] cpu cpu3: l=10000 h=85000 hyst=5000 l_limit=0 h_limit=2208000000 h_table=0
+[    2.809216] [    T1] sdhci: Secure Digital Host Controller Interface driver
+[    2.809227] [    T1] sdhci: Copyright(c) Pierre Ossman
+[    2.809230] [    T1] Synopsys Designware Multimedia Card Interface Driver
+[    2.809453] [    T1] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.812136] [    T1] arm-scmi firmware:scmi: Failed. SCMI protocol 17 not active.
+[    2.812170] [    T1] SMCCC: SOC_ID: ARCH_FEATURES(ARCH_SOC_ID) returned error: fffffffffffffffd
+[    2.812470] [    T1] cryptodev: driver 1.12 loaded.
+[    2.812490] [    T1] hid: raw HID events driver (C) Jiri Kosina
+[    2.813354] [    T1] usbcore: registered new interface driver usbhid
+[    2.813358] [    T1] usbhid: USB HID core driver
+[    2.813447] [    T1] ashmem: initialized
+[    2.815045] [    T1] optee: probing for conduit method.
+[    2.815062] [    T1] optee: revision 3.13 (87d94c5e)
+[    2.815218] [    T1] optee: initialized driver
+[    2.815309] [    T1] rknandbase v1.2 2021-01-07
+[    2.815517] [    T1] usbcore: registered new interface driver snd-usb-audio
+[    2.816228] [    T1] es8311 3-0018: Don't need spk-ctl gpio
+[    2.818845] [    T1] netem: version 1.3
+[    2.818856] [    T1] u32 classifier
+[    2.818859] [    T1]     input device check on
+[    2.818862] [    T1]     Actions configured
+[    2.819325] [    T1] xt_time: kernel timezone is -0000
+[    2.819404] [    T1] gre: GRE over IPv4 demultiplexor driver
+[    2.819407] [    T1] IPv4 over IPsec tunneling driver
+[    2.819719] [    T1] Initializing XFRM netlink socket
+[    2.819728] [    T1] IPsec XFRM device driver
+[    2.819838] [    T1] NET: Registered protocol family 10
+[    2.820233] [    T1] Segment Routing with IPv6
+[    2.820269] [    T1] mip6: Mobile IPv6
+[    2.820512] [    T1] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    2.820809] [    T1] NET: Registered protocol family 17
+[    2.820818] [    T1] NET: Registered protocol family 15
+[    2.820837] [    T1] Bridge firewalling registered
+[    2.820906] [    T1] Bluetooth: RFCOMM TTY layer initialized
+[    2.820912] [    T1] Bluetooth: RFCOMM socket layer initialized
+[    2.820921] [    T1] Bluetooth: RFCOMM ver 1.11
+[    2.820928] [    T1] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.820931] [    T1] Bluetooth: BNEP filters: protocol multicast
+[    2.820939] [    T1] Bluetooth: BNEP socket layer initialized
+[    2.820943] [    T1] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.820947] [    T1] Bluetooth: HIDP socket layer initialized
+[    2.820954] [    T1] l2tp_core: L2TP core driver, V2.0
+[    2.820959] [    T1] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    2.820963] [    T1] [BT_RFKILL]: Enter rfkill_rk_init
+[    2.820966] [    T1] [WLAN_RFKILL]: Enter rfkill_wlan_init
+[    2.821239] [    T1] [WLAN_RFKILL]: Enter rfkill_wlan_probe
+[    2.821252] [    T1] [WLAN_RFKILL]: can't find rockchip,grf property
+[    2.821256] [    T1] [WLAN_RFKILL]: wlan_platdata_parse_dt: wifi_chip_type = ap6255
+[    2.821259] [    T1] [WLAN_RFKILL]: wlan_platdata_parse_dt: enable wifi power control.
+[    2.821263] [    T1] [WLAN_RFKILL]: wlan_platdata_parse_dt: wifi power controled by gpio.
+[    2.821275] [    T1] [WLAN_RFKILL]: wlan_platdata_parse_dt: WIFI,poweren_gpio = 20 flags = 0.
+[    2.821286] [    T1] [WLAN_RFKILL]: wlan_platdata_parse_dt: WIFI,host_wake_irq = 10, flags = 0.
+[    2.821353] [    T1] [WLAN_RFKILL]: wlan_platdata_parse_dt: The ref_wifi_clk not found !
+[    2.821356] [    T1] [WLAN_RFKILL]: rfkill_wlan_probe: init gpio
+[    2.821360] [    T1] [WLAN_RFKILL]: rfkill_set_wifi_bt_power: 1
+[    2.821364] [    T1] [WLAN_RFKILL]: Exit rfkill_wlan_probe
+[    2.821647] [    T1] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: uart_rts_gpios = 148.
+[    2.821658] [    T1] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,reset_gpio = 22.
+[    2.821664] [    T1] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,wake_gpio = 21.
+[    2.821670] [    T1] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,wake_host_irq = 0.
+[    2.821706] [    T1] [BT_RFKILL]: Request irq for bt wakeup host
+[    2.821738] [    T1] [BT_RFKILL]: ** disable irq
+[    2.821803] [    T1] [BT_RFKILL]: bt_default device registered.
+[    2.822174] [    T1] registered taskstats version 1
+[    2.822181] [    T1] Loading compiled-in X.509 certificates
+[    2.822236] [    T1] Key type ._fscrypt registered
+[    2.822241] [    T1] Key type .fscrypt registered
+[    2.822244] [    T1] Key type fscrypt-provisioning registered
+[    2.822381] [    T1] pstore: Using crash dump compression: deflate
+[    2.822480] [    T1] rga3_core0 fdb60000.rga: Adding to iommu group 2
+[    2.822603] [    T1] rga: rga3_core0_irq, irq = 35, match scheduler
+[    2.822766] [    T1] rga: rga3_core0 driver loaded successfully ver:3.0.76831
+[    2.822789] [    T1] rga: rga3_core0 probe successfully
+[    2.822933] [    T1] rga3_core1 fdb70000.rga: Adding to iommu group 3
+[    2.823043] [    T1] rga: rga3_core1_irq, irq = 36, match scheduler
+[    2.823170] [    T1] rga: rga3_core1 driver loaded successfully ver:3.0.76831
+[    2.823195] [    T1] rga: rga3_core1 probe successfully
+[    2.823338] [    T1] rga: rga2_irq, irq = 37, match scheduler
+[    2.823445] [    T1] rga: rga2 driver loaded successfully ver:3.2.63318
+[    2.823451] [    T1] rga: rga2 probe successfully
+[    2.823626] [    T1] rga: Module initialized. v1.2.15
+[    2.840416] [  T207] pcie30_avdd0v75: supplied by vdd_0v75_s0
+[    2.840625] [    T7] mmc0: SDHCI controller on fe2e0000.mmc [fe2e0000.mmc] using ADMA
+[    2.842224] [    T9] mali fb000000.gpu: Kernel DDK version g12p0-01eac0
+[    2.844337] [  T207] pcie30_avdd1v8: supplied by avcc_1v8_s0
+[    2.844785] [    T9] mali fb000000.gpu: leakage=14
+[    2.845445] [  T207] rockchip-dmc dmc: leakage=32
+[    2.845453] [  T207] rockchip-dmc dmc: leakage-volt-sel=1
+[    2.845645] [  T207] rockchip-dmc dmc: avs=0
+[    2.845654] [  T207] rockchip-dmc dmc: current ATF version 0x100
+[    2.845717] [  T207] rockchip-dmc dmc: normal_rate = 1560000000
+[    2.845722] [  T207] rockchip-dmc dmc: reboot_rate = 2112000000
+[    2.845726] [  T207] rockchip-dmc dmc: suspend_rate = 528000000
+[    2.845730] [  T207] rockchip-dmc dmc: video_4k_rate = 1560000000
+[    2.845733] [  T207] rockchip-dmc dmc: video_4k_10b_rate = 1560000000
+[    2.845737] [  T207] rockchip-dmc dmc: boost_rate = 2112000000
+[    2.845742] [  T207] rockchip-dmc dmc: fixed_rate(isp|cif0|cif1|dualview) = 2112000000
+[    2.845746] [  T207] rockchip-dmc dmc: performance_rate = 2112000000
+[    2.845750] [  T207] rockchip-dmc dmc: hdmirx_rate = 2112000000
+[    2.845756] [  T207] rockchip-dmc dmc: failed to get vop bandwidth to dmc rate
+[    2.845760] [  T207] rockchip-dmc dmc: failed to get vop pn to msch rl
+[    2.845824] [  T207] rockchip-dmc dmc: l=10000 h=2147483647 hyst=5000 l_limit=0 h_limit=0 h_table=0
+[    2.845851] [  T207] rockchip-dmc dmc: could not find power_model node
+[    2.846264] [    T9] mali fb000000.gpu: pvtm=876
+[    2.846303] [    T9] mali fb000000.gpu: pvtm-volt-sel=3
+[    2.846917] [    T9] mali fb000000.gpu: avs=0
+[    2.849758] [    T9] W : [File] : drivers/gpu/arm/bifrost/platform/rk/mali_kbase_config_rk.c; [Line] : 136; [Func] : kbase_platform_rk_init(); power-off-delay-ms not available.
+[    2.855259] [    T9] mali fb000000.gpu: GPU hardware issue table may need updating:
+[    2.855259] [    T9] r0p0 status 5 is unknown; treating as r0p0 status 0
+[    2.855276] [    T9] mali fb000000.gpu: GPU identified as 0x7 arch 10.8.6 r0p0 status 0
+[    2.855440] [    T9] mali fb000000.gpu: No priority control manager is configured
+[    2.855455] [    T9] mali fb000000.gpu: No memory group manager is configured
+[    2.855496] [    T9] mali fb000000.gpu: Protected memory allocator not available
+[    2.855518] [  T207] input: adc-keys as /devices/platform/adc-keys/input/input2
+[    2.856736] [    T9] mali fb000000.gpu: Couldn't find power_model DT node matching 'arm,mali-simple-power-model'
+[    2.856754] [    T9] mali fb000000.gpu: Error -22, no DT entry: mali-simple-power-model.static-coefficient = 1*[0]
+[    2.857013] [    T9] mali fb000000.gpu: Error -22, no DT entry: mali-simple-power-model.dynamic-coefficient = 1*[0]
+[    2.857269] [    T9] mali fb000000.gpu: Error -22, no DT entry: mali-simple-power-model.ts = 4*[0]
+[    2.857521] [    T9] mali fb000000.gpu: Error -22, no DT entry: mali-simple-power-model.thermal-zone = ''
+[    2.861377] [    T9] mali fb000000.gpu: Using configured power model mali-lodx-power-model, and fallback mali-simple-power-model
+[    2.861555] [    T9] mali fb000000.gpu: l=10000 h=85000 hyst=5000 l_limit=0 h_limit=800000000 h_table=0
+[    2.862232] [  T207] debugfs: File 'Capture' in directory 'dapm' already present!
+[    2.862984] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.866649] [    T9] mali fb000000.gpu: Probed as mali0
+[    2.876561] [  T188] mmc0: new HS400 Enhanced strobe MMC card at address 0001
+[    2.876931] [  T188] mmcblk0: mmc0:0001 CKTM4R 58.2 GiB 
+[    2.877106] [  T188] mmcblk0boot0: mmc0:0001 CKTM4R partition 1 4.00 MiB
+[    2.877280] [  T188] mmcblk0boot1: mmc0:0001 CKTM4R partition 2 4.00 MiB
+[    2.877347] [  T188] mmcblk0rpmb: mmc0:0001 CKTM4R partition 3 16.0 MiB, chardev (235:0)
+[    2.879657] [  T188]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15
+[    2.888116] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.888266] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.888414] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.888562] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.888706] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.888850] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.889022] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.889168] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.889312] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.889460] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.889605] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.889750] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.889898] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.914775] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.914924] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.915071] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.915219] [  T207] es8311 3-0018: ASoC: error at snd_soc_component_update_bits on es8311.3-0018: -6
+[    2.915365] [  T207] es8311 3-0018: ASoC: error at snd_soc_component_update_bits on es8311.3-0018: -6
+[    2.915514] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.915661] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.915869] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.916018] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.916168] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.916315] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.916464] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.916612] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.916783] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.916929] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.917075] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.917222] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.917371] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.917518] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.917665] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.917813] [  T207] es8311 3-0018: ASoC: error at soc_component_write_no_lock on es8311.3-0018: -6
+[    2.918746] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.918901] [  T207] es8311 3-0018: ASoC: error at soc_component_read_no_lock on es8311.3-0018: -6
+[    2.922139] [    T1] RKNPU fdab0000.npu: Adding to iommu group 0
+[    2.922309] [    T1] RKNPU fdab0000.npu: RKNPU: rknpu iommu is enabled, using iommu mode
+[    2.923393] [    T1] RKNPU fdab0000.npu: can't request region for resource [mem 0xfdab0000-0xfdabffff]
+[    2.923413] [    T1] RKNPU fdab0000.npu: can't request region for resource [mem 0xfdac0000-0xfdacffff]
+[    2.923424] [    T1] RKNPU fdab0000.npu: can't request region for resource [mem 0xfdad0000-0xfdadffff]
+[    2.923620] [    T1] [drm] Initialized rknpu 0.7.2 20220428 for fdab0000.npu on minor 1
+[    2.924667] [  T143] rk-pcie fe170000.pcie: PCIe Link up, LTSSM is 0x30011
+[    2.924848] [  T143] rk-pcie fe170000.pcie: PCI host bridge to bus 0002:20
+[    2.924864] [  T143] pci_bus 0002:20: root bus resource [bus 20-2f]
+[    2.924877] [  T143] pci_bus 0002:20: root bus resource [??? 0xf2000000-0xf20fffff flags 0x0]
+[    2.924890] [  T143] pci_bus 0002:20: root bus resource [io  0x0000-0xfffff] (bus address [0xf2100000-0xf21fffff])
+[    2.924900] [  T143] pci_bus 0002:20: root bus resource [mem 0xf2200000-0xf2ffffff]
+[    2.924913] [  T143] pci_bus 0002:20: root bus resource [mem 0x980000000-0x9bfffffff pref]
+[    2.924959] [  T143] pci 0002:20:00.0: [1d87:3588] type 01 class 0x060400
+[    2.924991] [  T143] pci 0002:20:00.0: reg 0x38: [mem 0x00000000-0x0000ffff pref]
+[    2.925063] [  T143] pci 0002:20:00.0: supports D1 D2
+[    2.925073] [  T143] pci 0002:20:00.0: PME# supported from D0 D1 D3hot
+[    2.931298] [    T1] RKNPU fdab0000.npu: leakage=8
+[    2.934238] [  T143] pci 0002:20:00.0: Primary bus is hard wired to 0
+[    2.934257] [  T143] pci 0002:20:00.0: bridge configuration invalid ([bus 01-ff]), reconfiguring
+[    2.934519] [  T143] pci 0002:21:00.0: [14e4:449d] type 00 class 0x028000
+[    2.934619] [  T143] pci 0002:21:00.0: reg 0x10: [mem 0x00000000-0x0000ffff 64bit]
+[    2.934683] [  T143] pci 0002:21:00.0: reg 0x18: [mem 0x00000000-0x003fffff 64bit]
+[    2.935178] [  T143] pci 0002:21:00.0: supports D1 D2
+[    2.935185] [  T143] pci 0002:21:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    2.944118] [    T1] RKNPU fdab0000.npu: pvtm=882
+[    2.945509] [  T203] vendor storage:20190527 ret = 0
+[    2.948206] [    T1] RKNPU fdab0000.npu: pvtm-volt-sel=3
+[    2.953322] [  T143] pci_bus 0002:21: busn_res: [bus 21-2f] end is updated to 21
+[    2.953373] [  T143] pci 0002:20:00.0: BAR 8: assigned [mem 0xf2200000-0xf27fffff]
+[    2.953387] [  T143] pci 0002:20:00.0: BAR 6: assigned [mem 0xf2800000-0xf280ffff pref]
+[    2.953403] [  T143] pci 0002:21:00.0: BAR 2: assigned [mem 0xf2400000-0xf27fffff 64bit]
+[    2.953454] [  T143] pci 0002:21:00.0: BAR 0: assigned [mem 0xf2200000-0xf220ffff 64bit]
+[    2.953503] [  T143] pci 0002:20:00.0: PCI bridge to [bus 21]
+[    2.953516] [  T143] pci 0002:20:00.0:   bridge window [mem 0xf2200000-0xf27fffff]
+[    2.953635] [    T1] RKNPU fdab0000.npu: avs=0
+[    2.953747] [    T1] RKNPU fdab0000.npu: l=10000 h=85000 hyst=5000 l_limit=0 h_limit=800000000 h_table=0
+[    2.956093] [  T143] pcieport 0002:20:00.0: PME: Signaling with IRQ 122
+[    2.962526] [    T1] RKNPU fdab0000.npu: failed to find power_model node
+[    2.962536] [    T1] RKNPU fdab0000.npu: RKNPU: failed to initialize power model
+[    2.962540] [    T1] RKNPU fdab0000.npu: RKNPU: failed to get dynamic-coefficient
+[    2.963096] [    T1] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    2.963847] [    T1] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    2.963913] [   T57] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    2.963919] [   T57] cfg80211: failed to load regulatory.db
+[    2.964787] [    T1] rockchip-pm rockchip-suspend: not set pwm-regulator-config
+[    2.965339] [    T1] I : [File] : drivers/gpu/arm/mali400/mali/linux/mali_kernel_linux.c; [Line] : 409; [Func] : mali_module_init(); svn_rev_string_from_arm of this mali_ko is '', rk_ko_ver is '5', built at '10:22:27', on 'Aug  2 2022'.
+[    2.965514] [    T1] Mali: 
+[    2.965515] [    T1] Mali device driver loaded
+[    2.965523] [    T1] ALSA device list:
+[    2.965528] [    T1]   #0: rockchip,hdmi0
+[    2.965532] [    T1]   #1: rockchip,es8311
+[    2.965536] [    T1]   #2: rockchip,spdif-tx0
+[    2.966216] [    T1] Freeing unused kernel memory: 1344K
+[    2.967968] [  T187] usb 9-1: new low-speed USB device number 2 using xhci-hcd
+[    3.008155] [    T1] Run /init as init process
+[    3.008164] [    T1]   with arguments:
+[    3.008165] [    T1]     /init
+[    3.008167] [    T1]   with environment:
+[    3.008169] [    T1]     HOME=/
+[    3.008171] [    T1]     TERM=linux
+[    3.008173] [    T1]     storagemedia=emmc
+[    3.008175] [    T1]     buildvariant=userdebug
+[    3.010833] [    T1] init: init first stage started!
+[    3.010998] [    T1] init: Unable to open /lib/modules, skipping module loading.
+[    3.011331] [    T1] init: Copied ramdisk prop to /second_stage_resources/system/etc/ramdisk/build.prop
+[    3.011701] [    T1] init: [libfs_mgr]ReadFstabFromDt(): failed to read fstab from dt
+[    3.012719] [    T1] init: Using Android DT directory /proc/device-tree/firmware/android/
+[    3.073733] [    T1] init: [libfs_mgr]superblock s_max_mnt_count:65535,/dev/block/by-name/metadata
+[    3.073794] [    T1] init: [libfs_mgr]Filesystem on /dev/block/by-name/metadata was not cleanly shutdown; state flags: 0x1, incompat feature flags: 0x46
+[    3.074054] [    T1] EXT4-fs (mmcblk0p11): Ignoring removed nomblk_io_submit option
+[    3.102354] [    T1] EXT4-fs (mmcblk0p11): recovery complete
+[    3.102638] [    T1] EXT4-fs (mmcblk0p11): mounted filesystem with ordered data mode. Opts: errors=remount-ro,nomblk_io_submit
+[    3.102661] [    T1] ext4 filesystem being mounted at /metadata supports timestamps until 2038 (0x7fffffff)
+[    3.102696] [    T1] init: [libfs_mgr]check_fs(): mount(/dev/block/by-name/metadata,/metadata,ext4)=0: Success
+[    3.103540] [    T1] init: [libfs_mgr]umount_retry(): unmount(/metadata) succeeded
+[    3.103602] [    T1] init: [libfs_mgr]Not running /system/bin/e2fsck on /dev/block/mmcblk0p11 (executable not in system image)
+[    3.104980] [    T1] EXT4-fs (mmcblk0p11): mounted filesystem with ordered data mode. Opts: discard
+[    3.104994] [    T1] ext4 filesystem being mounted at /metadata supports timestamps until 2038 (0x7fffffff)
+[    3.110466] [    T1] EXT4-fs (dm-0): mounted filesystem without journal. Opts: barrier=1
+[    3.113646] [    T1] EXT4-fs (dm-2): mounted filesystem without journal. Opts: barrier=1
+[    3.114849] [    T1] EXT4-fs (dm-4): mounted filesystem without journal. Opts: barrier=1
+[    3.116035] [    T1] EXT4-fs (dm-1): mounted filesystem without journal. Opts: barrier=1
+[    3.116356] [  T187] usb 9-1: New USB device found, idVendor=1a2c, idProduct=0c23, bcdDevice= 1.10
+[    3.116363] [  T187] usb 9-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    3.116370] [  T187] usb 9-1: Product: USB Keyboard
+[    3.116374] [  T187] usb 9-1: Manufacturer: USB
+[    3.117118] [    T1] EXT4-fs (dm-3): mounted filesystem without journal. Opts: barrier=1
+[    3.118171] [    T1] EXT4-fs (dm-5): mounted filesystem without journal. Opts: barrier=1
+[    3.119201] [    T1] EXT4-fs (dm-6): mounted filesystem without journal. Opts: barrier=1
+[    3.125187] [    T1] printk: init: 26 output lines suppressed due to ratelimiting
+[    3.142712] [  T187] input: USB USB Keyboard as /devices/platform/usbdrd3_1/fc400000.usb/xhci-hcd.9.auto/usb9/9-1/9-1:1.0/0003:1A2C:0C23.0001/input/input3
+[    3.198177] [  T187] hid-generic 0003:1A2C:0C23.0001: input,hidraw0: USB HID v1.10 Keyboard [USB USB Keyboard] on usb-xhci-hcd.9.auto-1/input0
+[    3.201029] [  T187] input: USB USB Keyboard Consumer Control as /devices/platform/usbdrd3_1/fc400000.usb/xhci-hcd.9.auto/usb9/9-1/9-1:1.1/0003:1A2C:0C23.0002/input/input4
+[    3.239276] [    T1] init: Opening SELinux policy
+[    3.244252] [    T1] init: Loading SELinux policy
+[    3.254672] [  T187] input: USB USB Keyboard System Control as /devices/platform/usbdrd3_1/fc400000.usb/xhci-hcd.9.auto/usb9/9-1/9-1:1.1/0003:1A2C:0C23.0002/input/input5
+[    3.254798] [  T187] hid-generic 0003:1A2C:0C23.0002: input,hidraw1: USB HID v1.10 Device [USB USB Keyboard] on usb-xhci-hcd.9.auto-1/input1
+[    3.255562] [    T1] SELinux:  Permission nlmsg_getneigh in class netlink_route_socket not defined in policy.
+[    3.255617] [    T1] SELinux:  Permission bpf in class capability2 not defined in policy.
+[    3.255622] [    T1] SELinux:  Permission checkpoint_restore in class capability2 not defined in policy.
+[    3.255638] [    T1] SELinux:  Permission bpf in class cap2_userns not defined in policy.
+[    3.255641] [    T1] SELinux:  Permission checkpoint_restore in class cap2_userns not defined in policy.
+[    3.255709] [    T1] SELinux: the above unknown classes and permissions will be denied
+[    3.259209] [    T1] SELinux:  policy capability network_peer_controls=1
+[    3.259216] [    T1] SELinux:  policy capability open_perms=1
+[    3.259220] [    T1] SELinux:  policy capability extended_socket_class=1
+[    3.259224] [    T1] SELinux:  policy capability always_check_network=0
+[    3.259228] [    T1] SELinux:  policy capability cgroup_seclabel=0
+[    3.259233] [    T1] SELinux:  policy capability nnp_nosuid_transition=1
+[    3.259238] [    T1] SELinux:  policy capability genfs_seclabel_symlinks=0
+[    3.388004] [   T61] audit: type=1403 audit(1609502401.133:2): auid=4294967295 ses=4294967295 lsm=selinux res=1
+[    3.392502] [    T1] selinux: SELinux: Loaded file_contexts
+[    3.392514] [    T1] selinux: 
+[    3.450126] [    T1] init: init second stage started!
+[    3.469197] [    T1] init: Using Android DT directory /proc/device-tree/firmware/android/
+[    3.471243] [    T1] init: Overriding previous property 'persist.sys.usb.config':'none' with new value 'adb'
+[    3.471594] [    T1] init: Overriding previous property 'persist.sys.usb.config':'adb' with new value 'none'
+[    3.471641] [    T1] init: Couldn't load property file '/vendor/default.prop': open() failed: No such file or directory: No such file or directory
+[    3.473202] [    T1] init: Overriding previous property 'ro.com.google.clientidbase':'android-rockchip' with new value 'android-rockchip-tv'
+[    3.475835] [    T1] init: Could not set 'ro.boot.wificountrycode' to 'XS' while loading .prop filesRead-only property was already set
+[    3.476512] [    T1] init: Setting product property ro.product.brand to 'rockchip' (from ro.product.product.brand)
+[    3.476532] [    T1] init: Setting product property ro.product.device to 'rk3588_box' (from ro.product.product.device)
+[    3.476552] [    T1] init: Setting product property ro.product.manufacturer to 'rockchip' (from ro.product.product.manufacturer)
+[    3.492707] [   T61] audit: type=1107 audit(1609502401.236:3): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=persist.sys.adb_enable pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_prop:s0 tclass=file permissive=1'
+[    3.492817] [   T61] audit: type=1107 audit(1609502401.236:4): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=flash.success pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=1'
+[    3.494776] [   T61] audit: type=1107 audit(1609502401.240:5): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=init.svc.bootanim pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:init_service_status_private_prop:s0 tclass=file permissive=1'
+[    3.515378] [    T1] cgroup: Unknown subsys name 'schedtune'
+[    3.569237] [  T242] linkerconfig: Unable to access VNDK APEX at path: /apex/com.android.vndk.v32: No such file or directory
+[    3.569284] [  T242] linkerconfig: Unable to access VNDK APEX at path: /apex/com.android.vndk.v32: No such file or directory
+[    3.632211] [  T244] ueventd: ueventd started!
+[    3.633731] [  T244] selinux: SELinux: Loaded file_contexts
+[    3.633746] [  T244] selinux: 
+[    3.633912] [  T244] ueventd: Parsing file /system/etc/ueventd.rc...
+[    3.634466] [  T244] ueventd: Added '/vendor/etc/ueventd.rc' to import list
+[    3.634479] [  T244] ueventd: Added '/odm/etc/ueventd.rc' to import list
+[    3.634698] [  T244] ueventd: Parsing file /vendor/etc/ueventd.rc...
+[    3.635387] [  T244] ueventd: Parsing file /odm/etc/ueventd.rc...
+[    3.635403] [  T244] ueventd: Unable to read config file '/odm/etc/ueventd.rc': open() failed: No such file or directory
+[    3.635419] [  T244] ueventd: Parsing file /vendor/ueventd.rc...
+[    3.644694] [  T245] apexd: Bootstrap subcommand detected
+[    3.710783] [  T245] apexd: wait for '/dev/loop-control' took 38ms
+[    3.711323] [   T61] audit: type=1400 audit(1609502401.453:6): avc:  denied  { create } for  pid=52 comm="kdevtmpfs" name="loop16" scontext=u:r:kernel:s0 tcontext=u:object_r:device:s0 tclass=blk_file permissive=1
+[    3.711336] [   T61] audit: type=1400 audit(1609502401.456:7): avc:  denied  { setattr } for  pid=52 comm="kdevtmpfs" name="loop16" dev="devtmpfs" ino=177 scontext=u:r:kernel:s0 tcontext=u:object_r:device:s0 tclass=blk_file permissive=1
+[    3.725473] [  T245] apexd: Pre-allocated 27 loopback devices
+[    3.725544] [  T245] apexd: Scanning /system/apex for pre-installed ApexFiles
+[    3.725690] [  T245] apexd: Found pre-installed APEX /system/apex/com.google.android.scheduling_compressed.apex
+[    3.725992] [  T245] apexd: Found pre-installed APEX /system/apex/com.google.android.ipsec_compressed.apex
+[    3.726148] [  T245] apexd: Found pre-installed APEX /system/apex/com.google.android.media_compressed.apex
+[    3.726300] [  T245] apexd: Found pre-installed APEX /system/apex/com.google.android.extservices_compressed.apex
+[    3.726431] [  T245] apexd: Found pre-installed APEX /system/apex/com.android.apex.cts.shim.apex
+[    3.726567] [  T245] apexd: Found pre-installed APEX /system/apex/com.google.android.media.swcodec_compressed.apex
+[    3.742007] [  T281] EXT4-fs (loop1): mounted filesystem without journal. Opts: (null)
+[    3.742706] [  T280] EXT4-fs (loop2): mounted filesystem without journal. Opts: (null)
+[    3.743260] [  T278] EXT4-fs (loop0): mounted filesystem without journal. Opts: (null)
+[    3.744575] [  T279] EXT4-fs (loop3): mounted filesystem without journal. Opts: (null)
+[    3.754189] [  T245] printk: apexd: 30 output lines suppressed due to ratelimiting
+[    4.033581] [    T1] Registered swp emulation handler
+[    4.060341] [  T302] logd.auditd: start
+[    4.060362] [  T302] logd.klogd: 2195740493
+[    4.065269] [    T1] EXT4-fs (mmcblk0p10): Ignoring removed nomblk_io_submit option
+[    4.073239] [    T1] EXT4-fs (mmcblk0p10): recovery complete
+[    4.073911] [    T1] EXT4-fs (mmcblk0p10): mounted filesystem with ordered data mode. Opts: errors=remount-ro,nomblk_io_submit
+[    4.074351] [    T1] ext4 filesystem being mounted at /cache supports timestamps until 2038 (0x7fffffff)
+[    4.096620] [    T1] e2fsck: e2fsck 1.45.4 (23-Sep-2019)
+[    4.102401] [    T1] e2fsck: Pass 1: Checking inodes, blocks, and sizes
+[    4.103738] [    T1] e2fsck: Pass 2: Checking directory structure
+[    4.104547] [    T1] e2fsck: Pass 3: Checking directory connectivity
+[    4.104584] [    T1] e2fsck: Pass 4: Checking reference counts
+[    4.106562] [    T1] e2fsck: Pass 5: Checking group summary information
+[    4.114682] [    T1] e2fsck: /dev/block/by-name/cache: 17/98304 files (0.0% non-contiguous), 7221/98304 blocks
+[    4.117389] [    T1] EXT4-fs (mmcblk0p10): mounted filesystem with ordered data mode. Opts: noauto_da_alloc,discard
+[    4.117646] [    T1] ext4 filesystem being mounted at /cache supports timestamps until 2038 (0x7fffffff)
+[    4.173968] [  T330] type=1400 audit(1609502401.916:8): avc: denied { write } for comm="tee-supplicant" name="property_service" dev="tmpfs" ino=308 scontext=u:r:tee:s0 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=1
+[    4.174082] [  T330] type=1400 audit(1609502401.916:9): avc: denied { connectto } for comm="tee-supplicant" path="/dev/socket/property_service" scontext=u:r:tee:s0 tcontext=u:r:init:s0 tclass=unix_stream_socket permissive=1
+[    4.174230] [  T330] type=1107 audit(1609502401.916:10): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=vendor.security.tee_supplicant pid=337 uid=0 gid=0 scontext=u:r:tee:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=1'
+[    4.211905] [  T351] wait_for_keymaster: Waiting for Keymaster device
+[    4.482474] [  T330] type=1400 audit(1609502402.226:11): avc: denied { open } for comm="surfaceflinger" path="/dev/__properties__/u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=280 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=1
+[    4.482626] [  T330] type=1400 audit(1609502402.226:12): avc: denied { getattr } for comm="surfaceflinger" path="/dev/__properties__/u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=280 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=1
+[    4.482690] [  T330] type=1400 audit(1609502402.226:13): avc: denied { map } for comm="surfaceflinger" path="/dev/__properties__/u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=280 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=1
+[    4.496392] [  T361] mali fb000000.gpu: Loading Mali firmware 0x1010000
+[    4.496731] [  T361] mali fb000000.gpu: Protected memory allocator not found, Firmware protected mode entry will not be supported
+[    4.496734] [  T361] mali fb000000.gpu: Protected memory allocator not found, Firmware protected mode entry will not be supported
+[    4.496736] [  T361] mali fb000000.gpu: Protected memory allocator not found, Firmware protected mode entry will not be supported
+[    4.564849] [  T330] type=1400 audit(1609502402.310:14): avc: denied { read } for comm="android.hardwar" name="resolution_white.xml" dev="dm-0" ino=2951 scontext=u:r:hal_graphics_composer_default:s0 tcontext=u:object_r:system_file:s0 tclass=file permissive=1
+[    4.564947] [  T330] type=1400 audit(1609502402.310:15): avc: denied { open } for comm="android.hardwar" path="/system/usr/share/resolution_white.xml" dev="dm-0" ino=2951 scontext=u:r:hal_graphics_composer_default:s0 tcontext=u:object_r:system_file:s0 tclass=file permissive=1
+[    4.811844] [  T371] dw-dp fde60000.dp: failed to probe DP link: -110
+[    4.839249] [  T371] dw-dp fde60000.dp: failed to probe DP link: -110
+[    4.858219] [  T371] dwhdmi-rockchip fde80000.hdmi: use tmds mode
+[    4.933636] [  T382] dwhdmi-rockchip fde80000.hdmi: use tmds mode
+[    5.214690] [  T351] ServiceManager: Waited one second for android.system.keystore2.IKeystoreService/default (is service started? are binder threads started and available?)
+[    5.215360] [  T351] wait_for_keymaster: Keymaster device ready
+[    5.216315] [  T187] binder: undelivered transaction 128, process died.
+[    5.232709] [  T399] vdc: Waited 0ms for vold
+[    5.249405] [  T400] vdc: Waited 0ms for vold
+[    5.290838] [  T310] fsck.f2fs: Info: Fix the reported corruption.
+[    5.291250] [  T310] fsck.f2fs: 	Info: No support kernel version!
+[    5.291304] [  T310] fsck.f2fs: Info: Segments per section = 1
+[    5.291309] [  T310] fsck.f2fs: Info: Sections per zone = 1
+[    5.291313] [  T310] fsck.f2fs: Info: sector size = 4096
+[    5.291316] [  T310] fsck.f2fs: Info: total sectors = 14222840 (55557 MB)
+[    5.291833] [  T310] fsck.f2fs: Info: MKFS version
+[    5.291843] [  T310] fsck.f2fs:   "5.10.66"
+[    5.291846] [  T310] fsck.f2fs: Info: FSCK version
+[    5.291849] [  T310] fsck.f2fs:   from "5.10.66"
+[    5.354573] [  T310] F2FS-fs (dm-31): Using encoding defined by superblock: utf8-12.1.0 with flags 0x0
+[    5.424448] [  T310] F2FS-fs (dm-31): Mounted with checkpoint version = 3016684c
+[    5.475586] [  T417] vdc: Waited 0ms for vold
+[    5.486287] [    T1] fscrypt: AES-256-CTS-CBC using implementation "cts-cbc-aes-ce"
+[    5.487136] [    T1] fscrypt: AES-256-XTS using implementation "xts-aes-ce"
+[    5.552058] [  T424] apexd: Scanning /system/apex for pre-installed ApexFiles
+[    5.552336] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.scheduling_compressed.apex
+[    5.552686] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.ipsec_compressed.apex
+[    5.552903] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.media_compressed.apex
+[    5.553126] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.extservices_compressed.apex
+[    5.553337] [  T424] apexd: Found pre-installed APEX /system/apex/com.android.apex.cts.shim.apex
+[    5.553568] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.media.swcodec_compressed.apex
+[    5.553785] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.tethering_compressed.apex
+[    5.554000] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.permission_compressed.apex
+[    5.554206] [  T424] apexd: Found pre-installed APEX /system/apex/com.google.android.conscrypt_compressed.apex
+[    5.624879] [  T427] EXT4-fs (loop7): mounted filesystem without journal. Opts: (null)
+[    5.624991] [  T428] EXT4-fs (loop4): mounted filesystem without journal. Opts: (null)
+[    5.625685] [  T425] EXT4-fs (loop5): mounted filesystem without journal. Opts: (null)
+[    5.626651] [  T426] EXT4-fs (loop6): mounted filesystem without journal. Opts: (null)
+[    5.627915] [  T427] EXT4-fs (loop8): mounted filesystem without journal. Opts: (null)
+[    5.630315] [  T428] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.630681] [  T425] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.631033] [  T428] EXT4-fs (dm-30): mounted filesystem without journal. Opts: (null)
+[    5.631798] [  T427] EXT4-fs (loop10): mounted filesystem without journal. Opts: (null)
+[    5.632479] [  T426] EXT4-fs (loop9): mounted filesystem without journal. Opts: (null)
+[    5.633297] [  T425] EXT4-fs (dm-25): mounted filesystem without journal. Opts: (null)
+[    5.634234] [  T427] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.634943] [  T426] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.635094] [  T428] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.636049] [  T427] EXT4-fs (dm-28): mounted filesystem without journal. Opts: (null)
+[    5.636134] [  T426] EXT4-fs (dm-24): mounted filesystem without journal. Opts: (null)
+[    5.636711] [  T428] EXT4-fs (dm-26): mounted filesystem without journal. Opts: (null)
+[    5.637755] [  T425] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.639573] [  T425] EXT4-fs (dm-23): mounted filesystem without journal. Opts: (null)
+[    5.640765] [  T427] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.640767] [  T426] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.641644] [  T425] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.642153] [  T427] EXT4-fs (dm-20): mounted filesystem without journal. Opts: (null)
+[    5.643038] [  T428] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.643538] [  T426] EXT4-fs (dm-22): mounted filesystem without journal. Opts: (null)
+[    5.643931] [  T428] EXT4-fs (dm-19): mounted filesystem without journal. Opts: (null)
+[    5.644204] [  T425] EXT4-fs (dm-18): mounted filesystem without journal. Opts: (null)
+[    5.646188] [  T427] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.646730] [  T426] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.647319] [  T427] EXT4-fs (dm-14): mounted filesystem without journal. Opts: (null)
+[    5.647753] [  T426] EXT4-fs (dm-15): mounted filesystem without journal. Opts: (null)
+[    5.648947] [  T428] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.649064] [  T427] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.649588] [  T425] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.649672] [  T426] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.650280] [  T427] EXT4-fs (dm-13): mounted filesystem without journal. Opts: (null)
+[    5.650467] [  T428] EXT4-fs (dm-16): mounted filesystem without journal. Opts: (null)
+[    5.651137] [  T426] EXT4-fs (dm-7): mounted filesystem without journal. Opts: (null)
+[    5.656158] [  T427] device-mapper: verity: sha256 using implementation "sha256-ce"
+[    5.656436] [  T425] EXT4-fs (dm-17): mounted filesystem without journal. Opts: (null)
+[    5.657276] [  T427] EXT4-fs (dm-29): mounted filesystem without journal. Opts: (null)
+[    5.784799] [  T500] vdc: Waited 0ms for vold
+[    6.026337] [  T508] apexd: Snapshot DE subcommand detected
+[    6.026999] [  T508] apexd: Marking APEXd as ready
+[    6.224059] [  T241] init: Verified that /data/nfc has the encryption policy 71de2e2dc6882d088727e37856faa302 v2 modes 1/4 flags 0xa
+[    6.224244] [  T241] init: Inferred action different from explicit one, expected 0 but got 2
+[    6.224390] [  T241] init: Verified that /data/nfc/param has the encryption policy 71de2e2dc6882d088727e37856faa302 v2 modes 1/4 flags 0xa
+[    6.333773] [  T241] file system registered
+[    6.334216] [  T241] using random self ethernet address
+[    6.334227] [  T241] using random host ethernet address
+[    6.447068] [  T530] healthd: BatteryCycleCountPath not found
+[    6.449032] [  T530] healthd: battery l=50 v=3 t=2.6 h=2 st=3 c=-1600 fc=100 chg=au
+[    6.558686] [  T534] [dhd] _dhd_module_init: in Dongle Host Driver, version 101.10.361.22 (wlan=r892223-20220811-2)
+[    6.558686] [  T534] drivers/net/wireless/rockchip_wlan/rkwifi/bcmdhd compiled on Aug 15 2022 at 10:30:37
+[    6.558686] [  T534] 
+[    6.558701] [  T534] [dhd] ANDROID_VERSION = 11
+[    6.558705] [  T534] [WLAN_RFKILL]: rockchip_wifi_get_oob_irq: Enter
+[    6.558726] [  T534] [dhd] dhd_wlan_init_gpio: WL_HOST_WAKE=-1, oob_irq=123, oob_irq_flags=0x4
+[    6.558730] [  T534] [dhd] dhd_wlan_init_gpio: WL_REG_ON=-1
+[    6.558732] [  T534] [dhd] dhd_wifi_platform_load: Enter
+[    6.558831] [  T534] [dhd] dhdpcie_pci_probe : no mutex held
+[    6.558835] [  T534] [dhd] dhdpcie_pci_probe : set mutex lock
+[    6.558838] [  T534] [dhd] PCI_PROBE:  bus 21, slot 0,vendor 14E4, device 449D(good PCI location)
+[    6.558842] [  T534] [dhd] dhdpcie_init: found adapter info 'DHD generic adapter'
+[    6.558881] [  T534] pcieh 0002:21:00.0: enabling device (0000 -> 0002)
+[    6.559209] [  T534] [dhd] Disable CTO
+[    6.559939] [  T534] [dhd] ******** Perform FLR ********
+[    6.638086] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638174] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638242] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638309] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638375] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638442] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638508] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638575] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638641] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638707] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638773] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638839] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638905] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.638971] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.639037] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.639104] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.639170] [  T534] [dhd] read_config: reg=0x88 read val=0xb080
+[    6.639237] [  T534] [dhd] read_config: reg=0x88 read val=0x8080
+[    6.639648] [  T534] [dhd] ******** FLR Succedeed ********
+[    6.639963] [  T534] [dhd] DHD: dongle ram size is set to 1310720(orig 1310720) at 0x170000
+[    6.639970] [  T534] [dhd] dhdpcie_bar1_window_switch_enab: bar1_switch_enab=0 ramstart=0x170000 ramend=0x2affff bar1_size=0x0
+[    6.640019] [  T534] [dhd] dhd_conf_set_chiprev : devid=0x449d, chip=0xaae8, chiprev=2, svid=0x14e4, ssid=0xaae8
+[    6.642923] [  T534] [dhd] dhd_pktid_map_init:2458: pktid_audit init succeeded 1025
+[    6.642981] [  T534] [dhd] dhd_pktid_map_init:2458: pktid_audit init succeeded 4097
+[    6.643265] [  T534] [dhd] dhd_pktid_map_init:2458: pktid_audit init succeeded 36865
+[    6.649399] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649409] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649412] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649415] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649418] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649420] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649422] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649425] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.649427] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[    6.650239] [  T534] [dhd] dhd_attach(): thread:dhd_watchdog_thread:251 started
+[    6.650249] [  T534] [dhd] dhd_deferred_work_init: work queue initialized
+[    6.650253] [  T534] [dhd] dhd_tcpack_suppress_set: TCP ACK Suppress mode 0 -> mode 3
+[    6.650256] [  T534] [dhd] dhd_tcpack_suppress_set: TCPACK_INFO_MAXNUM=4, TCPDATA_INFO_MAXNUM=4
+[    6.650265] [  T534] [dhd] dhd_cpumasks_init CPU masks primary(big)=0x0 secondary(little)=0xfe
+[    6.655894] [  T534] [dhd] dhd_get_memdump_info: MEMDUMP ENABLED = 3
+[    6.655904] [  T534] [dhd] dhdpcie_bus_attach: making DHD_BUS_DOWN
+[    6.655909] [  T534] [dhd] dhdpcie_init: rc_dev from dev->bus->self (1d87:3588) is 0000000000000000
+[    6.656009] [  T534] [dhd] dhdpcie_init: rc_ep_aspm_cap: 1 rc_ep_l1ss_cap: 1
+[    6.656019] [  T534] [dhd] dhdpcie_request_irq: INTx enabled, irq=113
+[    6.656041] [  T534] [dhd] dhdpcie_bar1_window_switch_enab: bar1_switch_enab=0 ramstart=0x170000 ramend=0x2affff bar1_size=0x400000
+[    6.656046] [  T534] [dhd] dhd_bus_download_firmware: firmware path=/vendor/etc/firmware/fw_bcmdhd.bin, nvram path=/vendor/etc/firmware/nvram.txt
+[    6.656050] [  T534] [dhd] dhdpcie_dump_resource: BAR0(VA): 0x0000000000000000, BAR0(PA): 0x00000000f2200000, SIZE: 32768
+[    6.656053] [  T534] [dhd] dhdpcie_dump_resource: BAR1(VA): 0x0000000000000000, BAR1(PA): 0x00000000f2400000, SIZE: 4194304
+[    6.656064] [  T534] [dhd] dhd_conf_set_path_params : Final fw_path=/vendor/etc/firmware/fw_bcm43752a2_pcie_ag.bin
+[    6.656067] [  T534] [dhd] dhd_conf_set_path_params : Final nv_path=/vendor/etc/firmware/nvram_AP6275P.txt
+[    6.656069] [  T534] [dhd] dhd_conf_set_path_params : Final clm_path=/vendor/etc/firmware/clm_bcm43752a2_pcie_ag.blob
+[    6.656072] [  T534] [dhd] dhd_conf_set_path_params : Final conf_path=/vendor/etc/firmware/config.txt
+[    6.656111] [  T534] [dhd] dhd_get_download_buffer: Open image file failed /vendor/etc/firmware/config.txt
+[    6.656114] [  T534] [dhd] dhd_conf_read_config : Ignore config file /vendor/etc/firmware/config.txt
+[    6.656117] [  T534] [dhd] d2h_intr_method -> PCIE_INTX(0); d2h_intr_control -> D2H_INTMASK(0)
+[    6.656226] [  T534] [dhd] dhdpcie_download_code_file: dhd_tcm_test_enable 0
+[    6.656229] [  T534] [dhd] dhdpcie_download_code_file: download firmware /vendor/etc/firmware/fw_bcm43752a2_pcie_ag.bin
+[    6.656270] [  T534] [dhd] dhd_os_open_image1: /vendor/etc/firmware/fw_bcm43752a2_pcie_ag.bin (934906 bytes) open success
+[    6.764370] [  T534] [dhd] dhd_os_open_image1: /vendor/etc/firmware/nvram_AP6275P.txt (7335 bytes) open success
+[    6.765213] [  T534] [dhd] dhdpcie_download_nvram: dhd_get_download_buffer len 7335
+[    6.765220] [  T534] [dhd] # AP6275P_NVRAM_V1.1_20200702 
+[    6.765253] [  T534] [dhd] dhdpcie_download_nvram: process_nvram_vars len 5860
+[    6.783095] [  T534] [dhd] dhdpcie_bus_write_vars: Download, Upload and compare of NVRAM succeeded.
+[    6.783335] [  T534] [dhd] dhd_bus_aer_config: Configure AER registers for EP
+[    6.783357] [  T534] [dhd] dhd_bus_aer_config: Configure AER registers for RC
+[    6.882565] [  T534] [dhd] ### Total time ARM OOR to Readshared pass took 99296 usec ###
+[    6.882578] [  T534] [dhd] dhdpcie_readshared: PCIe shared addr (0x0020a184) read took 100000 usec before dongle is ready
+[    6.882857] [  T534] [dhd] H2D DMA WR INDX : array size 172 = 4 * 43
+[    6.882878] [  T534] [dhd] D2H DMA RD INDX : array size 16 = 4 * 4
+[    6.882882] [  T534] [dhd] D2H DMA WR INDX : array size 16 = 4 * 4
+[    6.882886] [  T534] [dhd] H2D DMA RD INDX : array size 172 = 4 * 43
+[    6.882889] [  T534] [dhd] dhdpcie_readshared: max H2D queues 40
+[    6.882892] [  T534] [dhd] FW supports debug buf dest ? N 
+[    6.883033] [  T534] [dhd] dhd_bus_init: Enabling bus->intr_enabled
+[    6.883037] [  T534] [dhd] dhdpcie_oob_intr_register OOB irq=123 flags=0x4
+[    6.883057] [  T534] [dhd] dhdpcie_oob_intr_register: enable_irq_wake
+[    6.883062] [  T534] [dhd] dhd_bus_start: Initializing 43 h2drings
+[    6.883084] [  T534] [dhd] dhd_prot_init:3925: h2d_max_txpost = 512
+[    6.883203] [  T534] [dhd] dhd_prot_init:3940: MAX_RXBUFPOST = 511
+[    6.883206] [  T534] [dhd] ENABLING DW:0
+[    6.883209] [  T534] [dhd] IDMA inited
+[    6.883211] [  T534] [dhd] IFRM not enabled in FW !!
+[    6.883213] [  T534] [dhd] DAR not enabled in FW !!
+[    6.883216] [  T534] [dhd] Enable hostcap: EXTD TXS in txcpl
+[    6.883278] [  T534] [dhd] dhd_prot_d2h_sync_init(): D2H sync mechanism is NONE 
+[    6.883290] [  T534] [dhd] dhd_bus_hostready : Read PCICMD Reg: 0x00100006
+[    6.883337] [  T534] [dhd] dhd_bus_dump_dar_registers: dar_clk_ctrl(0xa08:0x10b0040) dar_pwr_ctrl(0xa0c:0x30000) dar_intstat(0xa10:0x0)
+[    6.883340] [  T534] [dhd] dhd_bus_dump_dar_registers: dar_errlog(0xa60:0x0) dar_erraddr(0xa64:0x0) dar_pcie_mbint(0xa68:0x0)
+[    6.883346] [  T534] [dhd] dhd_bus_hostready: Ring Hostready:1
+[    6.883349] [  T534] [dhd] Attach flowrings pool for 40 rings
+[    6.890893] [  T534] [dhd] iDMA enabled PCIEControl = 00000001
+[    6.893193] [  T534] [dhd] dhd_send_d2h_ringcreate ringid: 3 idx: 46 max_h2d: 43
+[    6.893959] [    C0] [dhd] dhd_prot_process_d2h_ring_create_complete ring create Response status = 0 ring 3, id 0xfffc
+[    6.893970] [    C0] [dhd] info buffer post after ring create
+[    6.895920] [  T534] [dhd] wlc_ver_major 12, wlc_ver_minor 1
+[    6.895932] [  T534] [dhd] dhd_get_memdump_info: MEMDUMP ENABLED = 3
+[    6.897565] [  T534] [dhd] dhd_sync_with_dongle: GET_REVINFO device 0x449d, vendor 0x14e4, chipnum 0xaae8
+[    6.898854] [  T534] [dhd] dhd_sync_with_dongle: RxBuf Post : 2048
+[    6.901813] [  T534] [dhd] dhd_preinit_ioctls: preinit_status IOVAR not supported, use legacy preinit
+[    6.901824] [  T534] [dhd] dhd_tcpack_suppress_set 377: already set to 3
+[    6.903778] [  T534] [dhd] dhd_legacy_preinit_ioctls: hostwake_oob enabled
+[    6.905023] [  T534] [dhd] dhd_legacy_preinit_ioctls: use firmware generated mac_address 70:f7:54:e0:16:89
+[    6.905133] [  T534] [dhd] dhd_os_open_image1: /vendor/etc/firmware/clm_bcm43752a2_pcie_ag.blob (29113 bytes) open success
+[    6.907761] [  T534] [dhd] dhd_check_current_clm_data: ----- This FW is not included CLM data -----
+[    6.971207] [  T534] [dhd] dhd_check_current_clm_data: ----- This FW is included CLM data -----
+[    6.980018] [  T534] [dhd] Firmware up: op_mode=0x0005, MAC=70:f7:54:e0:16:89
+[    7.005443] [  T534] [dhd] dhd_legacy_preinit_ioctls: event_log_max_sets: 26 ret: 0
+[    7.010430] [  T534] [dhd] arp_enable:1 arp_ol:0
+[    7.018744] [  T534] [dhd]   Driver: 101.10.361.22 (wlan=r892223-20220811-2)
+[    7.018744] [  T534] [dhd]   Firmware: wl0: Apr  6 2022 15:45:38 version 18.35.387.23.129 (g203f1c92) FWID 01-1d5f7f73
+[    7.018744] [  T534] [dhd]   CLM: 9.9.6_SS (2021-03-05 14:49:44) 
+[    7.020242] [  T534] [dhd] dhd_pno_init: Support Android Location Service
+[    7.020246] [  T534] [dhd] dhd_rtt_init ENTRY
+[    7.020895] [  T534] [dhd] rtt_do_get_ioctl: failed to send getbuf proxd iovar (CMD ID : 1), status=-23
+[    7.020898] [  T534] [dhd] dhd_rtt_init : FTM is not supported
+[    7.020900] [  T534] [dhd] dhd_rtt_init EXIT, err = 0
+[    7.034329] [  T534] [dhd] [INIT] logset:8 is preserve/chatty
+[    7.039024] [  T652] read descriptors
+[    7.039040] [  T652] read strings
+[    7.039131] [  T534] [dhd] [INIT] logset:10 is preserve/chatty
+[    7.074510] [  T534] [dhd] dhd_ecounter_autoconfig Ecounter autoconfig in FW not supported
+[    7.110572] [    C0] [dhd] dhd_rx_frame: net device is NOT registered. drop event packet
+[    7.111003] [  T534] [dhd] dhd_conf_set_country : set country CN, revision 0
+[    7.115422] [    C0] [dhd] dhd_rx_frame: net device is NOT registered. drop event packet
+[    7.115891] [  T534] [dhd] dhd_conf_set_country : Country code: CN (CN/0)
+[    7.126990] [  T534] [dhd] Dongle Host Driver, version 101.10.361.22 (wlan=r892223-20220811-2)
+[    7.126990] [  T534] drivers/net/wireless/rockchip_wlan/rkwifi/bcmdhd compiled on Aug 15 2022 at 10:30:37
+[    7.126990] [  T534] 
+[    7.128445] [  T534] [dhd] Register interface [wlan0]  MAC: 70:f7:54:e0:16:89
+[    7.128445] [  T534] 
+[    7.128511] [  T534] [dhd] dhd_tcpack_suppress_set: TCP ACK Suppress mode 3 -> mode 0
+[    7.128521] [  T534] [dhd] dhd_tcpack_suppress_set: TCPACK_INFO_MAXNUM=4, TCPDATA_INFO_MAXNUM=4
+[    7.128531] [  T534] [dhd] [wlan0] wl_android_wifi_off : in g_wifi_on=1, on_failure=1
+[    7.128539] [  T534] [dhd] dhd_rtt_deinit: ENTER
+[    7.128545] [  T534] [dhd] dhd_rtt_deinit: EXIT, err = 0
+[    7.128552] [  T534] [dhd] dhd_bus_devreset: == Power OFF ==
+[    7.128578] [  T534] [dhd] dhd_bus_stop: making DHD_BUS_DOWN
+[    7.128718] [  T534] [dhd] dhd_dpc_kill: tasklet disabled
+[    7.134877] [  T534] [dhd] dhd_bus_devreset: making DHD_BUS_DOWN
+[    7.134892] [  T534] [dhd] dhd_bus_devreset:  WLAN OFF Done
+[    7.134901] [  T534] [dhd] wifi_platform_set_power = 0, delay: 0 msec
+[    7.134907] [  T534] [dhd] ======== PULL WL_REG_ON(-1) LOW! ========
+[    7.134914] [  T534] [WLAN_RFKILL]: rockchip_wifi_power: 0
+[    7.134920] [  T534] [WLAN_RFKILL]: rockchip_wifi_power: toggle = false
+[    7.134924] [  T534] wifi power off
+[    7.241320] [  T534] [WLAN_RFKILL]: wifi shut off power [GPIO20-0]
+[    7.241349] [  T534] [dhd] [wlan0] wl_android_wifi_off : out
+[    7.241929] [  T534] [dhd] Register interface [wlan1]  MAC: 72:f7:54:e0:16:89
+[    7.241929] [  T534] 
+[    7.241953] [  T534] [dhd] dhdpcie_pci_probe : mutex is released.
+[    7.242124] [  T534] [dhd] _dhd_module_init: Exit err=0
+[    7.885592] [  T378] Freeing drm_logo memory: 12148K
+[    8.104964] [  T652] read descriptors
+[    8.104999] [  T652] read strings
+[    9.071666] [  T330] type=1400 audit(1609502406.816:152): avc: denied { call } for comm="SyncFence" scontext=u:r:mediaserver:s0 tcontext=u:r:bootanim:s0 tclass=binder permissive=1
+[    9.120590] [  T330] type=1400 audit(1609502406.863:153): avc: denied { read } for comm="user_drmservice" lport=33334 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=udp_socket permissive=1
+[    9.164943] [  T652] read descriptors
+[    9.164976] [  T652] read strings
+[    9.165473] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[    9.165817] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[    9.165982] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[    9.567138] [  T330] type=1400 audit(1609502407.310:154): avc: denied { read } for comm="Binder:338_2" name="wakeup4" dev="sysfs" ino=24453 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[    9.567255] [  T330] type=1400 audit(1609502407.310:155): avc: denied { open } for comm="Binder:338_2" path="/sys/devices/platform/fdba8000.jpege-core/wakeup/wakeup4" dev="sysfs" ino=24453 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[    9.567309] [  T330] type=1400 audit(1609502407.310:156): avc: denied { read } for comm="Binder:338_2" name="event_count" dev="sysfs" ino=24460 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.567340] [  T330] type=1400 audit(1609502407.310:157): avc: denied { open } for comm="Binder:338_2" path="/sys/devices/platform/fdba8000.jpege-core/wakeup/wakeup4/event_count" dev="sysfs" ino=24460 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.567367] [  T330] type=1400 audit(1609502407.310:158): avc: denied { getattr } for comm="Binder:338_2" path="/sys/devices/platform/fdba8000.jpege-core/wakeup/wakeup4/event_count" dev="sysfs" ino=24460 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[    9.567408] [  T330] type=1400 audit(1609502407.310:159): avc: denied { read } for comm="Binder:338_2" name="wakeup18" dev="sysfs" ino=36522 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_power:s0 tclass=dir permissive=1
+[    9.567435] [  T330] type=1400 audit(1609502407.310:160): avc: denied { open } for comm="Binder:338_2" path="/sys/devices/virtual/power_supply/test_ac/wakeup18" dev="sysfs" ino=36522 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_power:s0 tclass=dir permissive=1
+[    9.671024] [  T330] type=1400 audit(1609502407.413:161): avc: denied { getattr } for comm="CpuTracker" path="/proc/601" dev="proc" ino=42661 scontext=u:r:system_server:s0 tcontext=u:r:datadis:s0 tclass=dir permissive=1
+[   10.006979] [    T1] init: Control message: Processed ctl.start for 'idmap2d' from pid: 715 (system_server)
+[   10.048292] [  T530] healthd: battery l=50 v=3 t=2.6 h=2 st=3 c=-1600 fc=100 chg=au
+[   10.218157] [  T652] read descriptors
+[   10.218172] [  T652] read strings
+[   10.218618] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   10.219163] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   10.219218] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   10.229709] [    T1] init: processing action (sys.sysctl.extra_free_kbytes=*) from (/system/etc/init/hw/init.rc:1209)
+[   10.686975] [  T834] read descriptors
+[   10.686995] [  T834] read strings
+[   10.687032] [  T834] read descriptors
+[   10.687038] [  T834] read strings
+[   10.831576] [  T515] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[   10.832058] [  T515] rk_gmac-dwmac fe1c0000.ethernet eth0: PHY [stmmac-1:01] driver [Generic PHY] (irq=POLL)
+[   10.835943] [  T515] dwmac4: Master AXI performs any burst length
+[   10.835981] [  T515] rk_gmac-dwmac fe1c0000.ethernet eth0: No Safety Features support found
+[   10.835998] [  T515] rk_gmac-dwmac fe1c0000.ethernet eth0: IEEE 1588-2008 Advanced Timestamp supported
+[   10.836312] [  T515] rk_gmac-dwmac fe1c0000.ethernet eth0: registered PTP clock
+[   10.837056] [  T515] rk_gmac-dwmac fe1c0000.ethernet eth0: configuring for phy/rgmii-rxid link mode
+[   10.837556] [  T515] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[   10.837647] [  T188] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[   10.862811] [    T1] init: processing action (wlan.driver.status=ok) from (/vendor/etc/init/hw/init.connectivity.rc:52)
+[   10.869014] [    T1] init: processing action (vendor.wifi.direct.interface=p2p-dev-wlan0) from (/vendor/etc/init/hw/init.connectivity.rc:59)
+[   10.869919] [  T534] [dhd] dhd_pri_open : no mutex held
+[   10.869927] [  T534] [dhd] dhd_pri_open : set mutex lock
+[   10.869931] [  T534] [dhd] [wlan0] dhd_open : Enter
+[   10.869935] [  T534] [dhd] Dongle Host Driver, version 101.10.361.22 (wlan=r892223-20220811-2)
+[   10.869935] [  T534] drivers/net/wireless/rockchip_wlan/rkwifi/bcmdhd compiled on Aug 15 2022 at 10:30:37
+[   10.869935] [  T534] 
+[   10.869939] [  T534] [dhd] dhd_open: ######### called for ifidx=0 #########
+[   10.869947] [  T534] [dhd] [wlan0] wl_android_wifi_on : in g_wifi_on=0
+[   10.869951] [  T534] [dhd] wifi_platform_set_power = 1, delay: 200 msec
+[   10.869954] [  T534] [dhd] ======== PULL WL_REG_ON(-1) HIGH! ========
+[   10.869957] [  T534] [WLAN_RFKILL]: rockchip_wifi_power: 1
+[   10.869962] [  T534] [WLAN_RFKILL]: rockchip_wifi_power: toggle = false
+[   10.974649] [  T534] [WLAN_RFKILL]: wifi turn on power [GPIO20-1]
+[   11.274905] [  T652] read descriptors
+[   11.274919] [  T652] read strings
+[   11.281307] [  T534] [dhd] dhd_bus_devreset: == Power ON ==
+[   11.281318] [  T534] [dhd] dhd_bus_devreset: dhdpcie_bus_start_host_dev OK
+[   11.281713] [  T534] [dhd] Disable CTO
+[   11.282470] [  T534] [dhd] DHD: dongle ram size is set to 1310720(orig 1310720) at 0x170000
+[   11.282475] [  T534] [dhd] dhdpcie_bar1_window_switch_enab: bar1_switch_enab=0 ramstart=0x170000 ramend=0x2affff bar1_size=0x400000
+[   11.282492] [  T534] [dhd] dhdpcie_request_irq: INTx enabled, irq=113
+[   11.282511] [  T534] [dhd] dhd_bus_download_firmware: firmware path=/vendor/etc/firmware/fw_bcm4329.bin, nvram path=/vendor/etc/firmware/nvram.txt
+[   11.282516] [  T534] [dhd] dhdpcie_dump_resource: BAR0(VA): 0x0000000000000000, BAR0(PA): 0x00000000f2200000, SIZE: 32768
+[   11.282519] [  T534] [dhd] dhdpcie_dump_resource: BAR1(VA): 0x0000000000000000, BAR1(PA): 0x00000000f2400000, SIZE: 4194304
+[   11.282528] [  T534] [dhd] dhd_conf_set_path_params : Final fw_path=/vendor/etc/firmware/fw_bcm43752a2_pcie_ag.bin
+[   11.282531] [  T534] [dhd] dhd_conf_set_path_params : Final nv_path=/vendor/etc/firmware/nvram_AP6275P.txt
+[   11.282533] [  T534] [dhd] dhd_conf_set_path_params : Final clm_path=/vendor/etc/firmware/clm_bcm43752a2_pcie_ag.blob
+[   11.282535] [  T534] [dhd] dhd_conf_set_path_params : Final conf_path=/vendor/etc/firmware/config.txt
+[   11.282569] [  T534] [dhd] dhd_get_download_buffer: Open image file failed /vendor/etc/firmware/config.txt
+[   11.282572] [  T534] [dhd] dhd_conf_read_config : Ignore config file /vendor/etc/firmware/config.txt
+[   11.282575] [  T534] [dhd] d2h_intr_method -> PCIE_INTX(0); d2h_intr_control -> D2H_INTMASK(0)
+[   11.282648] [  T534] [dhd] dhdpcie_download_code_file: dhd_tcm_test_enable 0
+[   11.282651] [  T534] [dhd] dhdpcie_download_code_file: download firmware /vendor/etc/firmware/fw_bcm43752a2_pcie_ag.bin
+[   11.282668] [  T534] [dhd] dhd_os_open_image1: /vendor/etc/firmware/fw_bcm43752a2_pcie_ag.bin (934906 bytes) open success
+[   11.378145] [  T534] [dhd] dhd_os_open_image1: /vendor/etc/firmware/nvram_AP6275P.txt (7335 bytes) open success
+[   11.378166] [  T534] [dhd] dhdpcie_download_nvram: dhd_get_download_buffer len 7335
+[   11.378168] [  T534] [dhd] # AP6275P_NVRAM_V1.1_20200702 
+[   11.378201] [  T534] [dhd] dhdpcie_download_nvram: process_nvram_vars len 5860
+[   11.395864] [  T534] [dhd] dhdpcie_bus_write_vars: Download, Upload and compare of NVRAM succeeded.
+[   11.396069] [  T534] [dhd] dhd_bus_aer_config: Configure AER registers for EP
+[   11.396091] [  T534] [dhd] dhd_bus_aer_config: Configure AER registers for RC
+[   11.496756] [  T534] [dhd] ### Total time ARM OOR to Readshared pass took 100725 usec ###
+[   11.496795] [  T534] [dhd] dhdpcie_readshared: PCIe shared addr (0x0020a184) read took 100000 usec before dongle is ready
+[   11.497182] [  T534] [dhd] H2D DMA WR INDX : array size 172 = 4 * 43
+[   11.497189] [  T534] [dhd] D2H DMA RD INDX : array size 16 = 4 * 4
+[   11.497195] [  T534] [dhd] D2H DMA WR INDX : array size 16 = 4 * 4
+[   11.497201] [  T534] [dhd] H2D DMA RD INDX : array size 172 = 4 * 43
+[   11.497208] [  T534] [dhd] dhdpcie_readshared: max H2D queues 40
+[   11.497215] [  T534] [dhd] FW supports debug buf dest ? N 
+[   11.497254] [  T534] [dhd] dhd_bus_init: Enabling bus->intr_enabled
+[   11.497264] [  T534] [dhd] dhdpcie_oob_intr_register OOB irq=123 flags=0x4
+[   11.497300] [  T534] [dhd] dhdpcie_oob_intr_register: enable_irq_wake
+[   11.497309] [  T534] [dhd] dhd_bus_start: Initializing 43 h2drings
+[   11.497345] [  T534] [dhd] dhd_prot_init:3925: h2d_max_txpost = 512
+[   11.497354] [  T534] [dhd] dhd_prot_init:3940: MAX_RXBUFPOST = 511
+[   11.497361] [  T534] [dhd] ENABLING DW:0
+[   11.497366] [  T534] [dhd] IDMA inited
+[   11.497372] [  T534] [dhd] IFRM not enabled in FW !!
+[   11.497377] [  T534] [dhd] DAR not enabled in FW !!
+[   11.497382] [  T534] [dhd] Enable hostcap: EXTD TXS in txcpl
+[   11.497414] [  T534] [dhd] dhd_prot_d2h_sync_init(): D2H sync mechanism is NONE 
+[   11.497431] [  T534] [dhd] dhd_bus_hostready : Read PCICMD Reg: 0x00100006
+[   11.497451] [  T534] [dhd] dhd_bus_dump_dar_registers: dar_clk_ctrl(0xa08:0x10b0040) dar_pwr_ctrl(0xa0c:0x30000) dar_intstat(0xa10:0x0)
+[   11.497458] [  T534] [dhd] dhd_bus_dump_dar_registers: dar_errlog(0xa60:0x0) dar_erraddr(0xa64:0x0) dar_pcie_mbint(0xa68:0x0)
+[   11.497468] [  T534] [dhd] dhd_bus_hostready: Ring Hostready:1
+[   11.497476] [  T534] [dhd] iDMA not enabled yet,waiting 1 ms c=1 IDMAControl = 00000000
+[   11.498487] [  T534] [dhd] iDMA enabled PCIEControl = 00000001
+[   11.500597] [  T534] [dhd] dhd_send_d2h_ringcreate ringid: 3 idx: 46 max_h2d: 43
+[   11.500992] [    C0] [dhd] dhd_prot_process_d2h_ring_create_complete ring create Response status = 0 ring 3, id 0xfffc
+[   11.501011] [    C0] [dhd] info buffer post after ring create
+[   11.502881] [  T534] [dhd] wlc_ver_major 12, wlc_ver_minor 1
+[   11.502889] [  T534] [dhd] dhd_get_memdump_info: MEMDUMP ENABLED = 3
+[   11.503186] [  T534] [dhd] dhd_sync_with_dongle: GET_REVINFO device 0x449d, vendor 0x14e4, chipnum 0xaae8
+[   11.503725] [  T534] [dhd] dhd_sync_with_dongle: RxBuf Post : 2048
+[   11.505338] [  T534] [dhd] dhd_preinit_ioctls: preinit_status IOVAR not supported, use legacy preinit
+[   11.505348] [  T534] [dhd] dhd_tcpack_suppress_set: TCP ACK Suppress mode 0 -> mode 3
+[   11.505351] [  T534] [dhd] dhd_tcpack_suppress_set: TCPACK_INFO_MAXNUM=4, TCPDATA_INFO_MAXNUM=4
+[   11.506187] [  T534] [dhd] dhd_legacy_preinit_ioctls: hostwake_oob enabled
+[   11.507568] [  T534] [dhd] dhd_legacy_preinit_ioctls: use firmware generated mac_address 70:f7:54:e0:16:89
+[   11.507625] [  T534] [dhd] dhd_os_open_image1: /vendor/etc/firmware/clm_bcm43752a2_pcie_ag.blob (29113 bytes) open success
+[   11.508125] [  T534] [dhd] dhd_check_current_clm_data: ----- This FW is not included CLM data -----
+[   11.523353] [  T534] [dhd] dhd_check_current_clm_data: ----- This FW is included CLM data -----
+[   11.524842] [  T534] [dhd] Firmware up: op_mode=0x0005, MAC=70:f7:54:e0:16:89
+[   11.558134] [  T534] [dhd] dhd_legacy_preinit_ioctls: event_log_max_sets: 26 ret: 0
+[   11.561711] [  T534] [dhd] arp_enable:1 arp_ol:0
+[   11.564130] [  T534] [dhd]   Driver: 101.10.361.22 (wlan=r892223-20220811-2)
+[   11.564130] [  T534] [dhd]   Firmware: wl0: Apr  6 2022 15:45:38 version 18.35.387.23.129 (g203f1c92) FWID 01-1d5f7f73
+[   11.564130] [  T534] [dhd]   CLM: 9.9.6_SS (2021-03-05 14:49:44) 
+[   11.564388] [  T534] [dhd] dhd_pno_init: Support Android Location Service
+[   11.564393] [  T534] [dhd] dhd_rtt_init ENTRY
+[   11.564671] [  T534] [dhd] rtt_do_get_ioctl: failed to send getbuf proxd iovar (CMD ID : 1), status=-23
+[   11.564674] [  T534] [dhd] dhd_rtt_init : FTM is not supported
+[   11.564676] [  T534] [dhd] dhd_rtt_init EXIT, err = 0
+[   11.569768] [  T534] [dhd] [INIT] logset:8 is preserve/chatty
+[   11.570575] [  T534] [dhd] [INIT] logset:10 is preserve/chatty
+[   11.576128] [  T534] [dhd] dhd_ecounter_autoconfig Ecounter autoconfig in FW not supported
+[   11.577520] [    C0] [dhd] dhd_rx_frame: net device is NOT registered. drop event packet
+[   11.581825] [  T534] [dhd] dhd_bus_devreset: WLAN Power On Done
+[   11.581833] [  T534] [dhd] [wlan0] wl_android_wifi_on : Success
+[   11.606999] [    C0] [dhd] dhd_rx_frame: net device is NOT registered. drop event packet
+[   11.615623] [  T534] [dhd] CFG80211-ERROR) wl_cfg80211_up : Roam channel cache enabled
+[   11.616114] [  T534] [dhd] [wlan0] dhd_open : Exit ret=0
+[   11.616133] [  T534] [dhd] [wlan0] dhd_pri_open : tx queue started
+[   11.616138] [  T534] [dhd] dhd_pri_open : mutex is released.
+[   11.716683] [ T1129] capability: warning: `wpa_supplicant' uses 32-bit capabilities (legacy support in use)
+[   11.791769] [  T520] [BT_RFKILL]: bt shut off power
+[   11.791809] [  T520] [BT_RFKILL]: rfkill_rk_set_power: set bt wake_host high!
+[   11.844659] [  T520] [BT_RFKILL]: ENABLE UART_RTS
+[   11.865913] [ T1129] [dhd] dhd_conf_set_country : set country XS, revision 0
+[   11.866884] [ T1129] [dhd] CONFIG-ERROR) dhd_conf_set_bufiovar : country setting failed -2, len=12
+[   11.867396] [ T1129] [dhd] dhd_conf_set_country : Country code: CN (CN/0)
+[   11.876969] [ T1129] [dhd] wldev_set_country: set country for XS as CN rev 0
+[   11.876997] [ T1129] [dhd] CFG80211-ERROR) wl_cfg80211_set_country_code : set country Failed :-2
+[   11.902831] [  T534] [dhd] dhd_dbg_get_ring_status : cannot find the ring_id : 4
+[   11.902855] [  T534] [dhd] dhd_dbg_get_ring_status : cannot find the ring_id : 5
+[   11.902861] [  T534] [dhd] dhd_dbg_get_ring_status : cannot find the ring_id : 6
+[   11.918646] [ T1129] [dhd] net_os_enable_packet_filter: val = 0
+[   11.918838] [ T1129] [dhd] net_os_rxfilter_add_remove: add_remove = 0, num = 2
+[   11.919764] [ T1129] [dhd] net_os_enable_packet_filter: val = 1
+[   11.919902] [ T1129] [dhd] net_os_enable_packet_filter: val = 0
+[   11.919980] [ T1129] [dhd] net_os_rxfilter_add_remove: add_remove = 0, num = 3
+[   11.920675] [ T1129] [dhd] net_os_enable_packet_filter: val = 1
+[   11.924777] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   11.949307] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   11.954641] [  T520] [BT_RFKILL]: DISABLE UART_RTS
+[   11.954674] [  T520] [BT_RFKILL]: bt turn on power
+[   11.954684] [  T520] [BT_RFKILL]: Request irq for bt wakeup host
+[   11.954696] [  T520] [BT_RFKILL]: ** disable irq
+[   11.954924] [  T520] of_dma_request_slave_channel: dma-names property of node '/serial@febc0000' missing or empty
+[   11.954932] [  T520] dw-apb-uart febc0000.serial: failed to request DMA, use interrupt mode
+[   11.958497] [  T635] [dhd] [wlan0] wl_run_escan : LEGACY_SCAN sync ID: 0, bssidx: 0
+[   11.967741] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   12.094715] [    T1] zram0: detected capacity change from 0 to 4018708480
+[   12.106809] [    T1] mkswap: Swapspace size: 3924516k, UUID=14b56c22-555b-4b05-a270-649ced9241eb
+[   12.144722] [    T1] Adding 3924516k swap on /dev/block/zram0.  Priority:-2 extents:1 across:3924516k SS
+[   12.169551] [  T706] audit: audit_lost=1 audit_rate_limit=5 audit_backlog_limit=64
+[   12.169581] [  T706] audit: rate limit exceeded
+[   12.296598] [  T374] dw-dp fde60000.dp: failed to probe DP link: -110
+[   12.334958] [  T652] read descriptors
+[   12.334995] [  T652] read strings
+[   13.394901] [  T652] read descriptors
+[   13.394921] [  T652] read strings
+[   14.062416] [  T496] AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification apexservice has clients: 1
+[   14.062437] [  T496] AidlLazyServiceRegistrar: Shutdown prevented by forcePersist override flag.
+[   14.062631] [  T496] AidlLazyServiceRegistrar: Process has 0 (of 1 available) client(s) in use after notification apexservice has clients: 0
+[   14.062637] [  T496] AidlLazyServiceRegistrar: Shutdown prevented by forcePersist override flag.
+[   14.155272] [  T330] type=1400 audit(1668578807.026:353): avc: denied { call } for comm="SyncFence" scontext=u:r:mediaserver:s0 tcontext=u:r:bootanim:s0 tclass=binder permissive=1
+[   14.203213] [  T706] audit: audit_lost=9 audit_rate_limit=5 audit_backlog_limit=64
+[   14.203243] [  T706] audit: rate limit exceeded
+[   14.433806] [  T330] type=1400 audit(1668578807.303:362): avc: denied { read } for comm="user_drmservice" lport=33334 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=udp_socket permissive=1
+[   14.451712] [  T652] read descriptors
+[   14.451767] [  T652] read strings
+[   14.453682] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   14.454189] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   14.454223] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   14.534037] [  T330] type=1400 audit(1668578807.403:363): avc: denied { read } for comm="user_drmservice" lport=33334 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=udp_socket permissive=1
+[   14.549088] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   14.581456] [  T330] type=1107 audit(1668578807.450:364): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc: denied { set } for property=persist.vendor.ethstate pid=1652 uid=1000 gid=1000 scontext=u:r:system_app:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=1'
+[   14.587850] [    T1] init: processing action (persist.vendor.ethstate=4) from (/vendor/etc/init/hw/init.hcy.rc:97)
+[   14.592988] [  T330] type=1400 audit(1668578807.463:365): avc: denied { call } for comm="MsgQueue" scontext=u:r:mediaserver:s0 tcontext=u:r:bootanim:s0 tclass=binder permissive=1
+[   14.619757] [  T330] type=1400 audit(1668578807.490:366): avc: denied { call } for comm="Binder:349_2" scontext=u:r:bootanim:s0 tcontext=u:r:mediaserver:s0 tclass=binder permissive=1
+[   14.635809] [ T1129] [dhd] [wlan0] wl_ext_set_chanspec : channel 5g-40(0xe12a 80MHz)
+[   14.636875] [ T1129] [dhd] [wlan0] wl_conn_debug_info : Connecting with fa:9f:c2:f5:2e:f4 ssid "DoESLiverpool", len (13), channel=5g-40(chan_cnt=1), sec=wpa2/psk/mfpn/aes, rssi=-47
+[   14.723938] [  T405] [dhd] [wlan0] wl_iw_event : Link UP with fa:9f:c2:f5:2e:f4
+[   14.723968] [  T405] [dhd] [wlan0] wl_ext_iapsta_link : [S] Link UP with fa:9f:c2:f5:2e:f4
+[   14.725623] [  T412] [dhd] [wlan0] wl_bss_connect_done : Report connect result - connection succeeded
+[   14.744273] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   14.745057] [ T1129] [dhd] dhd_prot_flow_ring_create: Send Flow Create Req flow ID 41 for peer fa:9f:c2:f5:2e:f4 prio 3 ifindex 0 items 512
+[   14.745260] [    C0] [dhd] dhd_prot_flow_ring_create_response_process: Flow Create Response status = 0 Flow 41
+[   14.748581] [   T59] binder: undelivered transaction 44665, process died.
+[   14.749658] [    T1] init: Service 'bootanim' (pid 349) exited with status 0 oneshot service took 10.552000 seconds in background
+[   14.749712] [    T1] init: Sending signal 9 to service 'bootanim' (pid 349) process group...
+[   14.749990] [    T1] libprocessgroup: Successfully killed process cgroup uid 1003 pid 349 in 0ms
+[   14.753987] [    T1] init: processing action (init.svc.bootanim=stopped) from (/vendor/etc/init/hw/init.hcy.rc:21)
+[   14.754325] [    T1] init: starting service 'preinstall'...
+[   14.758171] [    T1] init: starting service 'xbmc_copy_folder'...
+[   14.761717] [ T1129] [dhd] [wlan0] wl_add_keyext : key index (0) for fa:9f:c2:f5:2e:f4
+[   14.811031] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   14.816314] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   14.821220] [   T56] [dhd] dhd_prot_flow_ring_create: Send Flow Create Req flow ID 40 for peer 33:33:ff:7a:63:01 prio 0 ifindex 0 items 512
+[   14.821524] [    C0] [dhd] dhd_prot_flow_ring_create_response_process: Flow Create Response status = 0 Flow 40
+[   14.903351] [   T59] rk_gmac-dwmac fe1c0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[   14.903643] [   T59] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   14.903926] [   T59] [dhd] CFG80211-ERROR) wl_cfg80211_netdev_notifier_call : wdev null. Do nothing
+[   14.908975] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   15.352284] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.352304] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.409025] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   15.449188] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.449211] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.453891] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.453907] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.464100] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.464121] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.479478] [    T0] NOHZ tick-stop error: Non-RCU local softirq work is pending, handler #08!!!
+[   15.515127] [  T652] read descriptors
+[   15.515185] [  T652] read strings
+[   15.558654] [  T330] type=1400 audit(1668578808.430:454): avc: denied { read } for comm="om.android.show" name="u:object_r:serialno_prop:s0" dev="tmpfs" ino=238 scontext=u:r:system_app:s0 tcontext=u:object_r:serialno_prop:s0 tclass=file permissive=1
+[   15.558918] [  T330] type=1400 audit(1668578808.430:455): avc: denied { open } for comm="om.android.show" path="/dev/__properties__/u:object_r:serialno_prop:s0" dev="tmpfs" ino=238 scontext=u:r:system_app:s0 tcontext=u:object_r:serialno_prop:s0 tclass=file permissive=1
+[   15.558956] [  T330] type=1400 audit(1668578808.430:456): avc: denied { getattr } for comm="om.android.show" path="/dev/__properties__/u:object_r:serialno_prop:s0" dev="tmpfs" ino=238 scontext=u:r:system_app:s0 tcontext=u:object_r:serialno_prop:s0 tclass=file permissive=1
+[   15.559048] [  T330] type=1400 audit(1668578808.430:457): avc: denied { map } for comm="om.android.show" path="/dev/__properties__/u:object_r:serialno_prop:s0" dev="tmpfs" ino=238 scontext=u:r:system_app:s0 tcontext=u:object_r:serialno_prop:s0 tclass=file permissive=1
+[   15.735231] [  T601] audit: audit_lost=104 audit_rate_limit=5 audit_backlog_limit=64
+[   15.735263] [  T601] audit: rate limit exceeded
+[   16.558355] [  T652] read descriptors
+[   16.558385] [  T652] read strings
+[   17.628302] [  T652] read descriptors
+[   17.628330] [  T652] read strings
+[   17.825791] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   18.681803] [  T652] read descriptors
+[   18.681864] [  T652] read strings
+[   18.902106] [   T55] binder: undelivered transaction 62195, process died.
+[   19.340446] [  T330] type=1400 audit(1712863592.267:493): avc: denied { read } for comm="user_drmservice" lport=33334 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=udp_socket permissive=1
+[   19.554918] [  T330] type=1400 audit(1712863592.480:494): avc: denied { open } for comm="Binder:2330_3" path="/dev/__properties__/u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=280 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=1 app=com.google.android.gms
+[   19.555192] [  T330] type=1400 audit(1712863592.483:495): avc: denied { getattr } for comm="Binder:2330_3" path="/dev/__properties__/u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=280 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=1 app=com.google.android.gms
+[   19.555289] [  T330] type=1400 audit(1712863592.483:496): avc: denied { map } for comm="Binder:2330_3" path="/dev/__properties__/u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=280 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=1 app=com.google.android.gms
+[   19.556164] [ T2348] audit: audit_lost=128 audit_rate_limit=5 audit_backlog_limit=64
+[   19.556175] [ T2348] audit: rate limit exceeded
+[   19.556234] [  T330] type=1400 audit(1712863592.483:497): avc: denied { write } for comm="Binder:2330_3" name="property_service" dev="tmpfs" ino=308 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=1 app=com.google.android.gms
+[   19.737992] [ T1196] logd: start watching /data/system/packages.list ...
+[   19.738425] [ T1196] logd: ReadPackageList, total packages: 86
+[   19.751948] [  T652] read descriptors
+[   19.752015] [  T652] read strings
+[   19.753428] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   19.755643] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   19.756024] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   20.034854] [    T1] init: Sending signal 9 to service 'idmap2d' (pid 612) process group...
+[   20.040567] [    T1] libprocessgroup: Successfully killed process cgroup uid 1000 pid 612 in 5ms
+[   20.041099] [    T1] init: Control message: Processed ctl.stop for 'idmap2d' from pid: 715 (system_server)
+[   20.041384] [    T1] init: Service 'idmap2d' (pid 612) received signal 9
+[   20.742176] [  T330] type=1400 audit(1712863593.670:501): avc: denied { read } for comm="user_drmservice" lport=33334 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=udp_socket permissive=1
+[   20.806763] [ T1648] binder_alloc: 1320: binder_alloc_buf size 1056768 failed, no address space
+[   20.806780] [ T1648] binder_alloc: allocated: 0 (num: 0 largest: 0), free: 1040384 (num: 1 largest: 1040384)
+[   20.806785] [ T1648] binder: 1461:1648 transaction failed 29201/-28, size 1056768-0 line 2921
+[   20.821552] [  T652] read descriptors
+[   20.821575] [  T652] read strings
+[   20.822396] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   20.823271] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   20.823325] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   20.843061] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   20.903182] [  T312] logd: logdr: UID=10049 GID=10049 PID=1461 n tail=0 logMask=4 pid=0 start=0ns deadline=0ns
+[   21.142320] [  T330] type=1400 audit(1712863594.070:502): avc: denied { read } for comm="user_drmservice" lport=33334 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=udp_socket permissive=1
+[   21.165219] [ T2414] audit: audit_lost=131 audit_rate_limit=5 audit_backlog_limit=64
+[   21.165234] [ T2414] audit: rate limit exceeded
+[   21.882710] [  T652] read descriptors
+[   21.882753] [  T652] read strings
+[   22.675961] [ T1515] audit: audit_lost=553 audit_rate_limit=5 audit_backlog_limit=64
+[   22.675990] [ T1515] audit: rate limit exceeded
+[   22.948492] [  T652] read descriptors
+[   22.948541] [  T652] read strings
+[   23.853056] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   24.005212] [  T652] read descriptors
+[   24.005274] [  T652] read strings
+[   25.048299] [  T652] read descriptors
+[   25.048356] [  T652] read strings
+[   25.049096] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   25.049771] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   25.049824] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   26.094874] [  T652] read descriptors
+[   26.094908] [  T652] read strings
+[   26.095621] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   26.096249] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   26.096301] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   26.865064] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   27.131580] [  T652] read descriptors
+[   27.131610] [  T652] read strings
+[   27.132519] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   27.133125] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   27.133177] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   28.171472] [  T652] read descriptors
+[   28.171501] [  T652] read strings
+[   28.172149] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   29.214941] [  T652] read descriptors
+[   29.214974] [  T652] read strings
+[   29.874265] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   30.248102] [  T652] read descriptors
+[   30.248136] [  T652] read strings
+[   30.248778] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   30.249332] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   30.249377] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   31.281549] [  T652] read descriptors
+[   31.281578] [  T652] read strings
+[   31.282276] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   31.282896] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   31.282951] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   32.328102] [  T652] read descriptors
+[   32.328130] [  T652] read strings
+[   32.328810] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   32.329381] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   32.329426] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   32.884570] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   33.378134] [  T652] read descriptors
+[   33.378163] [  T652] read strings
+[   33.378773] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   33.636732] [ T1196] logd: start watching /data/system/packages.list ...
+[   33.637325] [ T1196] logd: ReadPackageList, total packages: 86
+[   33.914667] [  T934] vcc3v3_pcie30: disabling
+[   34.414868] [  T652] read descriptors
+[   34.414901] [  T652] read strings
+[   35.468205] [  T652] read descriptors
+[   35.468232] [  T652] read strings
+[   35.468874] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   35.469492] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   35.469543] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   35.666329] [  T424] apexd: Deleting unused dm device com.android.i18n
+[   35.667240] [  T330] type=1400 audit(1712863608.593:935): avc: denied { getattr } for comm="kdevtmpfs" path="/dm-10" dev="devtmpfs" ino=207 scontext=u:r:kernel:s0 tcontext=u:object_r:device:s0 tclass=blk_file permissive=1
+[   35.667368] [  T330] type=1400 audit(1712863608.593:936): avc: denied { setattr } for comm="kdevtmpfs" name="dm-10" dev="devtmpfs" ino=207 scontext=u:r:kernel:s0 tcontext=u:object_r:device:s0 tclass=blk_file permissive=1
+[   35.669253] [  T330] type=1400 audit(1712863608.593:937): avc: denied { unlink } for comm="kdevtmpfs" name="dm-10" dev="devtmpfs" ino=207 scontext=u:r:kernel:s0 tcontext=u:object_r:device:s0 tclass=blk_file permissive=1
+[   35.688412] [  T424] apexd: Deleting unused dm device com.android.runtime
+[   35.709219] [  T424] apexd: Deleting unused dm device com.android.apex.cts.shim
+[   35.729865] [  T424] apexd: Deleting unused dm device com.android.appsearch
+[   35.750488] [  T424] apexd: Deleting unused dm device com.android.tzdata
+[   35.771086] [  T424] apexd: Deleting unused dm device com.google.mainline.primary.libs
+[   35.791773] [  T424] apexd: Deleting unused dm device com.android.vndk.v32
+[   35.812581] [  T424] AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+[   35.813008] [  T424] AidlLazyServiceRegistrar: Unregistered all clients and exiting
+[   35.814977] [ T1589] printk: Binder:424_3: 96 output lines suppressed due to ratelimiting
+[   35.815198] [    T1] init: Service 'apexd' (pid 424) exited with status 0 oneshot service took 30.281000 seconds in background
+[   35.815217] [    T1] init: Sending signal 9 to service 'apexd' (pid 424) process group...
+[   35.815384] [    T1] libprocessgroup: Successfully killed process cgroup uid 0 pid 424 in 0ms
+[   35.893860] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   36.521441] [  T652] read descriptors
+[   36.521473] [  T652] read strings
+[   36.522070] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   36.522652] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   36.522700] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   37.554760] [  T652] read descriptors
+[   37.554789] [  T652] read strings
+[   37.555565] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   38.614863] [  T652] read descriptors
+[   38.614891] [  T652] read strings
+[   38.904759] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   39.648119] [  T652] read descriptors
+[   39.648147] [  T652] read strings
+[   40.691457] [  T652] read descriptors
+[   40.691488] [  T652] read strings
+[   40.692083] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   40.692634] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   40.692681] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   41.738194] [  T652] read descriptors
+[   41.738221] [  T652] read strings
+[   41.739056] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   41.739636] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   41.739681] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   41.894106] [  T330] type=1400 audit(1712863614.820:938): avc: denied { syslog_read } for comm="dmesg" scontext=u:r:shell:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
+[   41.910564] [  T330] type=1400 audit(1712863614.837:939): avc: denied { fork } for comm="stress_wifi_tes" scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=process permissive=1
+[   41.910569] [ T3322] audit: audit_lost=554 audit_rate_limit=5 audit_backlog_limit=64
+[   41.910576] [ T3322] audit: rate limit exceeded
+[   41.910867] [  T330] type=1400 audit(1712863614.837:940): avc: denied { search } for comm="stress_wifi_tes" name="/" dev="dm-0" ino=2 scontext=u:r:datadis:s0 tcontext=u:object_r:rootfs:s0 tclass=dir permissive=1
+[   41.910938] [  T330] type=1400 audit(1712863614.837:941): avc: denied { search } for comm="stress_wifi_tes" name="/" dev="dm-6" ino=2 scontext=u:r:datadis:s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=1
+[   41.910975] [  T330] type=1400 audit(1712863614.837:942): avc: denied { search } for comm="stress_wifi_tes" name="/" dev="tmpfs" ino=1 scontext=u:r:datadis:s0 tcontext=u:object_r:apex_mnt_dir:s0 tclass=dir permissive=1
+[   41.911010] [  T330] type=1400 audit(1712863614.837:943): avc: denied { read } for comm="stress_wifi_tes" path="pipe:[63602]" dev="pipefs" ino=63602 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=fifo_file permissive=1
+[   41.913018] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   42.788277] [  T652] read descriptors
+[   42.788307] [  T652] read strings
+[   42.789121] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   42.790338] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   42.790387] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   42.975403] [  T330] type=1401 audit(1712863615.903:1137): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   42.975679] [  T330] type=1401 audit(1712863615.903:1138): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   42.990489] [  T330] type=1400 audit(1712863615.917:1139): avc: denied { getattr } for comm="df" path="/dev/blkio" dev="cgroup" ino=1 scontext=u:r:datadis:s0 tcontext=u:object_r:cgroup:s0 tclass=dir permissive=1
+[   42.998066] [  T330] type=1401 audit(1712863615.927:1140): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   43.821449] [  T652] read descriptors
+[   43.821479] [  T652] read strings
+[   43.822070] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   44.858105] [  T652] read descriptors
+[   44.858134] [  T652] read strings
+[   44.920949] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   45.914918] [  T652] read descriptors
+[   45.914950] [  T652] read strings
+[   45.915716] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   45.916453] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   45.916515] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   46.954780] [  T652] read descriptors
+[   46.954807] [  T652] read strings
+[   46.955413] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   46.956027] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   46.956080] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   47.218696] [  T330] type=1401 audit(1712863620.147:1156): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   47.219006] [  T330] type=1401 audit(1712863620.147:1157): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   47.220582] [ T3362] audit: audit_lost=748 audit_rate_limit=5 audit_backlog_limit=64
+[   47.220596] [ T3362] audit: rate limit exceeded
+[   47.220714] [  T330] type=1400 audit(1712863620.147:1158): avc: denied { read } for comm="df" name="u:object_r:build_prop:s0" dev="tmpfs" ino=84 scontext=u:r:datadis:s0 tcontext=u:object_r:build_prop:s0 tclass=file permissive=1
+[   47.220866] [  T330] type=1400 audit(1712863620.147:1159): avc: denied { read } for comm="grep" name="u:object_r:build_prop:s0" dev="tmpfs" ino=84 scontext=u:r:datadis:s0 tcontext=u:object_r:build_prop:s0 tclass=file permissive=1
+[   47.220929] [  T330] type=1400 audit(1712863620.147:1160): avc: denied { open } for comm="grep" path="/dev/__properties__/u:object_r:build_prop:s0" dev="tmpfs" ino=84 scontext=u:r:datadis:s0 tcontext=u:object_r:build_prop:s0 tclass=file permissive=1
+[   47.220964] [  T330] type=1400 audit(1712863620.147:1161): avc: denied { open } for comm="df" path="/dev/__properties__/u:object_r:build_prop:s0" dev="tmpfs" ino=84 scontext=u:r:datadis:s0 tcontext=u:object_r:build_prop:s0 tclass=file permissive=1
+[   47.931720] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   48.001444] [  T652] read descriptors
+[   48.001468] [  T652] read strings
+[   48.002098] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   48.002719] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   48.002774] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   48.280147] [  T330] type=1401 audit(1712863621.207:1167): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   48.280967] [  T330] type=1401 audit(1712863621.207:1168): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   48.306894] [  T330] type=1401 audit(1712863621.233:1169): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   48.326501] [  T330] type=1401 audit(1712863621.253:1170): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   48.952179] [ T1129] [dhd] [wlan0] wl_cfg80211_disconnect : Reason 3, act 1, bssid fa:9f:c2:f5:2e:f4
+[   48.955537] [    C0] [dhd] dhd_flow_rings_delete: ifindex 0
+[   48.955594] [    C0] [dhd] dhd_prot_flow_ring_delete: Send Flow Delete Req RING ID 40 for peer 33:33:ff:7a:63:01 prio 0 ifindex 0
+[   48.955607] [    C0] [dhd] dhd_prot_flow_ring_delete: Send Flow Delete Req RING ID 41 for peer fa:9f:c2:f5:2e:f4 prio 3 ifindex 0
+[   48.955663] [  T412] [dhd] [wlan0] wl_iw_event : [0 times] disconnected with fa:9f:c2:f5:2e:f4, event 11, reason 8
+[   48.955670] [    C0] [dhd] dhd_flow_rings_delete: ifindex 0
+[   48.955692] [  T412] [dhd] [wlan0] wl_ext_iapsta_link : [S] Link down with fa:9f:c2:f5:2e:f4, WLC_E_DISASSOC(11), reason 8
+[   48.955700] [    C0] [dhd] wl_process_host_event: Deleting all STA from assoc list and flowrings.
+[   48.955703] [  T412] [dhd] [wlan0] wl_ext_iapsta_link : [S] Link down with fa:9f:c2:f5:2e:f4, WLC_E_DISASSOC(11), reason 8
+[   48.955720] [    C0] [dhd] dhd_flow_rings_delete: ifindex 0
+[   48.955756] [  T412] [dhd] [wlan0] wl_iw_event : Link Down with fa:9f:c2:f5:2e:f4, reason=2
+[   48.955765] [  T411] [dhd] [wlan0] wl_handle_link_down : Link down: WLC_E_LINK(16), reason 2 from fa:9f:c2:f5:2e:f4
+[   48.955783] [  T412] [dhd] [wlan0] wl_ext_iapsta_link : [S] Link down with fa:9f:c2:f5:2e:f4, WLC_E_LINK(16), reason 2
+[   48.955789] [  T411] [dhd] [wlan0] wl_handle_link_down : Disconnect event sent to upper layerevent:16 e->reason=33554432 reason=2 ie_len=0 from fa:9f:c2:f5:2e:f4
+[   48.955822] [    C0] [dhd] dhd_prot_flow_ring_delete_response_process: Flow Delete Response status = 0 Flow 40
+[   48.955842] [    C0] [dhd] dhd_prot_flow_ring_delete_response_process: Flow Delete Response status = 0 Flow 41
+[   49.034771] [  T652] read descriptors
+[   49.034797] [  T652] read strings
+[   49.035357] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   49.255763] [ T1129] [dhd] dhd_conf_set_country : set country XS, revision 0
+[   49.256380] [ T1129] [dhd] CONFIG-ERROR) dhd_conf_set_bufiovar : country setting failed -2, len=12
+[   49.256615] [ T1129] [dhd] dhd_conf_set_country : Country code: CN (CN/0)
+[   49.263117] [ T1129] [dhd] wldev_set_country: set country for XS as CN rev 0
+[   49.263129] [ T1129] [dhd] CFG80211-ERROR) wl_cfg80211_set_country_code : set country Failed :-2
+[   49.269272] [  T534] [dhd] CFG80211-ERROR) wl_cfgvendor_lstats_get_info : cca_get_stats_ext iovar err = -2
+[   49.350564] [ T3377] audit: audit_lost=752 audit_rate_limit=5 audit_backlog_limit=64
+[   49.350584] [ T3377] audit: rate limit exceeded
+[   50.068122] [  T652] read descriptors
+[   50.068149] [  T652] read strings
+[   50.415125] [ T3384] audit: audit_lost=764 audit_rate_limit=5 audit_backlog_limit=64
+[   50.415190] [ T3384] audit: rate limit exceeded
+[   51.101476] [  T652] read descriptors
+[   51.101507] [  T652] read strings
+[   51.102349] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   51.102954] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   51.103004] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   52.141424] [  T652] read descriptors
+[   52.141452] [  T652] read strings
+[   52.142261] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   52.142857] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   52.142907] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   52.529778] [  T330] type=1401 audit(1712863625.457:1204): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   52.530037] [  T330] type=1401 audit(1712863625.457:1205): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   52.556261] [  T330] type=1401 audit(1712863625.483:1206): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   52.573628] [  T330] type=1401 audit(1712863625.500:1207): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   53.178103] [  T652] read descriptors
+[   53.178127] [  T652] read strings
+[   53.178676] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   53.179263] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   53.179309] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   53.590488] [  T330] type=1401 audit(1712863626.517:1208): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   53.591049] [  T330] type=1401 audit(1712863626.517:1209): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   53.615063] [  T330] type=1401 audit(1712863626.543:1210): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   53.629745] [  T330] type=1401 audit(1712863626.557:1211): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   54.218116] [  T652] read descriptors
+[   54.218154] [  T652] read strings
+[   54.218733] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   54.645146] [  T330] type=1401 audit(1712863627.573:1212): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   54.645858] [  T330] type=1401 audit(1712863627.573:1213): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   55.264774] [  T652] read descriptors
+[   55.264803] [  T652] read strings
+[   55.730371] [ T3416] audit: audit_lost=769 audit_rate_limit=5 audit_backlog_limit=64
+[   55.730425] [ T3416] audit: rate limit exceeded
+[   56.301476] [  T652] read descriptors
+[   56.301506] [  T652] read strings
+[   56.302358] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   56.302962] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   56.303017] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   56.744123] [ T3428] audit: audit_lost=779 audit_rate_limit=5 audit_backlog_limit=64
+[   56.744158] [ T3428] audit: rate limit exceeded
+[   57.338124] [  T652] read descriptors
+[   57.338155] [  T652] read strings
+[   57.338982] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   57.339601] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   57.339653] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   57.849280] [  T330] type=1401 audit(1712863630.777:1254): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   57.850031] [  T330] type=1401 audit(1712863630.777:1255): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   57.875970] [  T330] type=1401 audit(1712863630.803:1256): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   57.894807] [  T330] type=1401 audit(1712863630.823:1257): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   58.381463] [  T652] read descriptors
+[   58.381486] [  T652] read strings
+[   58.382423] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   58.383013] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   58.383064] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   58.912495] [  T330] type=1401 audit(1712863631.840:1258): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   58.913260] [  T330] type=1401 audit(1712863631.840:1259): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   58.939207] [  T330] type=1401 audit(1712863631.867:1260): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   58.957196] [  T330] type=1401 audit(1712863631.883:1261): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   59.414816] [  T652] read descriptors
+[   59.414842] [  T652] read strings
+[   59.415790] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   59.975158] [  T330] type=1401 audit(1712863632.903:1262): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   59.975864] [  T330] type=1401 audit(1712863632.903:1263): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   60.448086] [  T652] read descriptors
+[   60.448110] [  T652] read strings
+[   61.054530] [ T3455] audit: audit_lost=794 audit_rate_limit=5 audit_backlog_limit=64
+[   61.054573] [ T3455] audit: rate limit exceeded
+[   61.491455] [  T652] read descriptors
+[   61.491483] [  T652] read strings
+[   61.492341] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   61.492946] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   61.492998] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   62.113477] [ T3460] audit: audit_lost=799 audit_rate_limit=5 audit_backlog_limit=64
+[   62.113524] [ T3460] audit: rate limit exceeded
+[   62.524800] [  T652] read descriptors
+[   62.524829] [  T652] read strings
+[   62.525481] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   62.526043] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   62.526090] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   63.166664] [  T330] type=1401 audit(1712863636.093:1293): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   63.167019] [  T330] type=1400 audit(1712863636.093:1294): avc: denied { execute } for comm="stress_wifi_tes" name="linker64" dev="loop7" ino=16 scontext=u:r:datadis:s0 tcontext=u:object_r:system_linker_exec:s0 tclass=file permissive=1
+[   63.167113] [  T330] type=1400 audit(1712863636.093:1295): avc: denied { read open } for comm="stress_wifi_tes" path="/apex/com.android.runtime/bin/linker64" dev="loop7" ino=16 scontext=u:r:datadis:s0 tcontext=u:object_r:system_linker_exec:s0 tclass=file permissive=1
+[   63.167166] [  T330] type=1400 audit(1712863636.093:1296): avc: denied { read } for comm="stress_wifi_tes" path="pipe:[67640]" dev="pipefs" ino=67640 scontext=u:r:datadis:s0 tcontext=u:r:datadis:s0 tclass=fifo_file permissive=1
+[   63.167369] [  T330] type=1401 audit(1712863636.093:1297): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   63.167716] [ T3467] audit: audit_lost=808 audit_rate_limit=5 audit_backlog_limit=64
+[   63.167732] [ T3467] audit: rate limit exceeded
+[   63.558084] [  T652] read descriptors
+[   63.558111] [  T652] read strings
+[   63.558720] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   63.559310] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   63.559368] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   64.227865] [  T330] type=1401 audit(1712863637.153:1309): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   64.228633] [  T330] type=1401 audit(1712863637.157:1310): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   64.254247] [  T330] type=1401 audit(1712863637.180:1311): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   64.272243] [  T330] type=1401 audit(1712863637.200:1312): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   64.594762] [  T652] read descriptors
+[   64.594781] [  T652] read strings
+[   64.595574] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   65.288649] [  T330] type=1401 audit(1712863638.217:1313): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   65.628101] [  T652] read descriptors
+[   65.628131] [  T652] read strings
+[   66.449402] [  T530] healthd: battery l=50 v=3 t=2.6 h=2 st=3 c=-1600 fc=100 chg=au
+[   66.668090] [  T652] read descriptors
+[   66.668114] [  T652] read strings
+[   66.668735] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   66.669322] [    T1] init: Command 'symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:22) took 0ms and failed: symlink() failed: File exists
+[   66.669372] [    T1] init: Command 'write /config/usb_gadget/g1/UDC ${sys.usb.controller}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:23) took 0ms and failed: property 'sys.usb.controller' doesn't exist while expanding '${sys.usb.controller}'
+[   67.203421] [    T1] init: processing action (persist.device_config.lmkd_native.thrashing_limit_critical=*) from (/system/etc/init/lmkd.rc:44)
+[   67.203850] [    T1] init: processing action (lmkd.reinit=1) from (/system/etc/init/lmkd.rc:10)
+[   67.204169] [    T1] init: starting service 'exec 20 (/system/bin/lmkd --reinit)'...
+[   67.272827] [    T1] init: Service 'exec 20 (/system/bin/lmkd --reinit)' (pid 3498) exited with status 0 oneshot service took 0.067000 seconds in background
+[   67.272877] [    T1] init: Sending signal 9 to service 'exec 20 (/system/bin/lmkd --reinit)' (pid 3498) process group...
+[   67.273026] [    T1] libprocessgroup: Successfully killed process cgroup uid 0 pid 3498 in 0ms
+[   67.419108] [ T3510] audit: audit_lost=819 audit_rate_limit=5 audit_backlog_limit=64
+[   67.419228] [ T3510] audit: rate limit exceeded
+[   67.731698] [  T652] read descriptors
+[   67.731729] [  T652] read strings
+[   67.732374] [    T1] init: processing action (sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1) from (/system/etc/init/hw/init.usb.configfs.rc:20)
+[   68.498323] [  T330] type=1401 audit(1712863641.427:1357): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   68.498574] [  T330] type=1401 audit(1712863641.427:1358): op=security_compute_sid invalid_context="u:r:datadis:s0" scontext=u:r:datadis:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=process
+[   68.515768] [  T330] type=1400 audit(1712863641.443:1359): avc: denied { getattr } for comm="df" name="/" dev="cgroup" ino=1 scontext=u:r:datadis:s0 tcontext=u:object_r:cgroup:s0 tclass=filesystem permissive=1
+[   68.516162] [  T330] type=1400 audit(1712863641.443:1360): avc: denied { getattr } for comm="df" path="/data/user/0" dev="dm-31" ino=96 scontext=u:r:datadis:s0 tcontext=u:object_r:system_data_file:s0:c512,c768 tclass=dir permissive=1
+[   68.516340] [  T330] type=1400 audit(1712863641.443:1361): avc: denied { getattr } for comm="df" path="/data_mirror/cur_profiles" dev="dm-31" ino=81 scontext=u:r:datadis:s0 tcontext=u:object_r:user_profile_root_file:s0 tclass=dir permissive=1
+[   68.524518] [ T3518] audit: audit_lost=847 audit_rate_limit=5 audit_backlog_limit=64
+[   68.524542] [ T3518] audit: rate limit exceeded
+[   68.768143] [  T652] read descriptors
+[   68.768170] [  T652] read strings
+[   69.544100] [  T330] type=1400 audit(1712863642.470:1364): avc: denied { syslog_read } for comm="dmesg" scontext=u:r:shell:s0 tcontext=u:r:kernel:s0 tclass=system permissive=1
