@@ -10,8 +10,8 @@
       fsType = "ext4";
     };
   boot = {
-    kernelPackages = lib.mkForce (pkgs.linuxKernel.packagesFor (pkgs.callPackage ./kernel.nix {}));
-#    kernelPackages = lib.mkForce pkgs.linuxPackages_testing;
+#    kernelPackages = lib.mkForce (pkgs.linuxKernel.packagesFor (pkgs.callPackage ./kernel.nix {}));
+    kernelPackages = lib.mkForce pkgs.linuxPackages_testing;
     loader = {
       generic-extlinux-compatible.enable = lib.mkDefault true;
       grub.enable = lib.mkDefault false;
@@ -31,6 +31,9 @@
     trusted-users = [ "root" "@wheel" ];
   };
   services.openssh.enable = true;
+  services.logind.extraConfig = ''
+    RuntimeDirectorySize=50%
+  '';
   users = {
     users = {
       root.password = "default";

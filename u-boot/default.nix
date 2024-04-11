@@ -22,8 +22,6 @@ buildUBoot {
     hash = "sha256-daaWVIhkWkX64rMsE/uf19T13mZpmpSA8Vkehplc9Ig=";
   };
   defconfig = "H96_V58-rk3588_defconfig";
-  #defconfig = "evb-rk3588_defconfig";
-  #defconfig = "generic-rk3588_defconfig";
   extraMeta.platforms = ["aarch64-linux"];
   BL31 = "${armTrustedFirmwareRK3588}/bl31.elf";
   ROCKCHIP_TPL = rkbin.TPL_RK3588;
@@ -34,10 +32,5 @@ buildUBoot {
   '';
 
   filesToInstall = [ "u-boot.itb" "idbloader.img" "u-boot-rockchip.bin" ];
-  postInstall = ''
-    ls -lah
-    ls -lah
-    find -name '*generic*dtb'
-  '';
 }
 
