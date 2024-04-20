@@ -18,13 +18,32 @@
         "type": "github"
       }
     },
+    "mesa-panthor": {
+      "flake": false,
+      "locked": {
+        "host": "gitlab.freedesktop.org",
+        "lastModified": 1709342310,
+        "narHash": "sha256-i5n4JCK9n9BXuEmIW47Mpec7yzymauIygYa8yTGsaTg=",
+        "owner": "mesa",
+        "repo": "mesa",
+        "rev": "63d2aa4eb645e32ea3d5aea453a45aa6a3412e15",
+        "type": "gitlab"
+      },
+      "original": {
+        "host": "gitlab.freedesktop.org",
+        "owner": "mesa",
+        "ref": "63d2aa4eb645e32ea3d5aea453a45aa6a3412e15",
+        "repo": "mesa",
+        "type": "gitlab"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1712608508,
-        "narHash": "sha256-vMZ5603yU0wxgyQeHJryOI+O61yrX2AHwY6LOFyV1gM=",
+        "lastModified": 1713537308,
+        "narHash": "sha256-XtTSSIB2DA6tOv+l0FhvfDMiyCmhoRbNB+0SeInZkbk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4cba8b53da471aea2ab2b0c1f30a81e7c451f4b6",
+        "rev": "5c24cf2f0a12ad855f444c30b2421d044120c66f",
         "type": "github"
       },
       "original": {
@@ -55,6 +74,7 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "mesa-panthor": "mesa-panthor",
         "nixpkgs": "nixpkgs"
       }
     }

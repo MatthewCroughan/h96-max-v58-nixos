@@ -26,16 +26,6 @@
 		stdout-path = "serial2:1500000n8";
 	};
 
-	hdmi0_sound: hdmi0-sound {
-		status = "okay";
-		compatible = "rockchip,hdmi";
-		rockchip,mclk-fs = <128>;
-		rockchip,card-name = "rockchip-hdmi0";
-		rockchip,cpu = <&i2s5_8ch>;
-		rockchip,codec = <&hdmi0>;
-		rockchip,jack-det;
-	};
-
 	// Bluetooth isn't working
 	bluetooth-rfkill {
 		compatible = "rfkill-gpio";
@@ -683,54 +673,6 @@
 	status = "okay";
 };
 
-&gpu {
-	mali-supply = <&vdd_gpu_s0>;
-	status = "okay";
-};
-
-&hdmi0 {
-	status = "okay";
-};
-
-&hdmi0_sound {
-	status = "okay";
-};
-
-&hdmi0_in {
-	hdmi0_in_vp0: endpoint {
-		remote-endpoint = <&vp0_out_hdmi0>;
-	};
-};
-
-&hdptxphy_hdmi0 {
-	status = "okay";
-};
-
-// Not sure if this is necessary
-&hdmirx_cma {
-	status = "okay";
-};
-
-&display_subsystem {
-	clocks = <&hdptxphy_hdmi0>;
-	clock-names = "hdmi0_phy_pll";
-};
-
-&vop_mmu {
-	status = "okay";
-};
-
-&vop {
-	status = "okay";
-};
-
-&vp0 {
-	vp0_out_hdmi0: endpoint@ROCKCHIP_VOP2_EP_HDMI0 {
-		reg = <ROCKCHIP_VOP2_EP_HDMI0>;
-		remote-endpoint = <&hdmi0_in_vp0>;
-	};
-};
-
 // Not sure if this is necessary
 &pcie30phy {
 	status = "okay";
@@ -760,74 +702,3 @@
 		};
 	};
 };
-
-&u2phy0 {
-	status = "okay";
-};
-
-&u2phy0_otg {
-	status = "okay";
-};
-
-&u2phy1 {
-	status = "okay";
-};
-
-&u2phy1_otg {
-	status = "okay";
-};
-
-&u2phy2 {
-	status = "okay";
-};
-
-&u2phy2_host {
-	phy-supply = <&vcc5v0_host>;
-	status = "okay";
-};
-
-&u2phy3 {
-	status = "okay";
-};
-
-&u2phy3_host {
-	phy-supply = <&vcc5v0_host>;
-	status = "okay";
-};
-
-&usbdp_phy0 {
-	status = "okay";
-};
-
-&usbdp_phy1 {
-	status = "okay";
-};
-
-&usb_host0_ohci {
-	status = "okay";
-};
-
-&usb_host0_ehci {
-	status = "okay";
-};
-
-// Labelled OTG on silk screen
-&usb_host0_xhci {
-	dr_mode = "host"; // Must be host, otg doesn't work
-	maximum-speed = "high-speed";
-	status = "okay";
-};
-
-&usb_host1_ohci {
-	status = "okay";
-};
-
-&usb_host1_ehci {
-	status = "okay";
-};
-
-&usb_host1_xhci {
-	dr_mode = "host";
-	status = "okay";
-};
-

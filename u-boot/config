@@ -71,4 +71,12 @@ CONFIG_USB_DWC3=y
 CONFIG_USB_DWC3_GENERIC=y
 CONFIG_ERRNO_STR=y
 
+# Needed due to regressions
+# https://lore.kernel.org/u-boot/50dfa3d6-a1ca-4492-a3fc-8d8c56b40b43@kwiboo.se/
+CONFIG_BOOTM=y
+
+# Not sure if needed
+CONFIG_PCIE_DW_ROCKCHIP=y
+CONFIG_PCIE_ROCKCHIP=y
+CONFIG_PCI=y
 

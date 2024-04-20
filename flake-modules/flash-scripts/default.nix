@@ -8,7 +8,15 @@ inputs: {
     '';
     packages.flash-uboot = pkgs.writeShellScriptBin "flash-uboot" ''
       set -x
+      ${pkgs.lib.getExe self'.packages.flash-spl}
       ${pkgs.lib.getExe pkgs.rkdeveloptool} wl 0x40 ${aarch64pkgs.ubootH96MaxV58}/u-boot-rockchip.bin
+      ${pkgs.lib.getExe pkgs.rkdeveloptool} rd
+    '';
+    packages.flash-os = pkgs.writeShellScriptBin "flash-os" ''
+      set -x
+      ${pkgs.lib.getExe self'.packages.flash-spl}
+      ${pkgs.lib.getExe pkgs.rkdeveloptool} wl 0 ${self'.packages.h96-max-v58-image}/sd-image/*.img
+      ${pkgs.lib.getExe pkgs.rkdeveloptool} rd
     '';
   };
 }

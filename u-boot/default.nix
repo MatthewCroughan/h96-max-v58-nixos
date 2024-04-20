@@ -1,25 +1,14 @@
-{ buildUBoot, armTrustedFirmwareRK3588, rkbin, fetchpatch2, fetchFromGitHub, fetchFromGitLab }:
+{ buildUBoot, armTrustedFirmwareRK3588, rkbin, fetchFromGitHub }:
 buildUBoot {
-  version = "hacked";
-#  extraPatches = [
-#    (fetchpatch2 {
-#      url = "https://raw.githubusercontent.com/HeyMeco/build/6012de75b46367741eba7a993dbbdad7c547a729/patch/u-boot/legacy/u-boot-radxa-rk3588/0003-add-defconfig-and-dtb-for-H96_V58.patch";
-#      hash = "sha256-0y70+H9Jz7CtFABQceuEyZSbOdBE0XVp43fc/ViX0pk=";
-#    })
-#  ];
-#  src = ./u-boot-2024.04-rc5;
-  #src = fetchFromGitLab {
-  #  domain = "gitlab.collabora.com";
-  #  owner = "hardware-enablement/rockchip-3588";
-  #  repo = "u-boot";
-  #  rev = "889c316b59e2d715063f65931d7f2040e154fc4a";
-  #  hash = "sha256-EgZ8HhXXlob00tEE9TcI0NOHQPFBNKXJaduJBAh4L3Q=";
-  #};
+  version = "rk3588-H96-V58";
   src = fetchFromGitHub {
-    owner = "Kwiboo";
-    repo = "u-boot-rockchip";
-    rev = "rk3xxx-2024.04";
-    hash = "sha256-daaWVIhkWkX64rMsE/uf19T13mZpmpSA8Vkehplc9Ig=";
+    owner = "u-boot";
+    repo = "u-boot";
+    # v2024.04 doesn't work due to regression, so this is a later master commit
+    # after the regression was fixed
+    # https://lore.kernel.org/u-boot/50dfa3d6-a1ca-4492-a3fc-8d8c56b40b43@kwiboo.se/
+    rev = "af04f37a78c7e61597fb9ed6db2c8f8d7f8b0f92";
+    hash = "sha256-l2y6pDo+WDXOURBNwvwEsNoKhpxfrLJVi7cJwALk1cw=";
   };
   defconfig = "H96_V58-rk3588_defconfig";
   extraMeta.platforms = ["aarch64-linux"];
@@ -28,7 +17,13 @@ buildUBoot {
 
   preConfigure = ''
     cp --no-preserve=mode ${./config} configs/H96_V58-rk3588_defconfig
-    cp --no-preserve=mode ${./rk3588-H96-V58.dts} arch/arm/dts/rk3588-H96-V58.dts
+    cp --no-preserve=mode ${./rk3588-H96-V58-u-boot.dtsi} arch/arm/dts/rk3588-H96-V58-u-boot.dtsi
+
+    # u-boot mainline doesn't have gpu, hdmi, other nodes yet, so this one is a
+    # copy of the full dts, with those missing nodes removed.
+    cp --no-preserve=mode ${./rk3588-H96-V58-uboot-only-out-of-sync.dts} arch/arm/dts/rk3588-H96-V58.dts
+
+    substituteInPlace arch/arm/dts/Makefile --replace rk3588-generic rk3588-H96-V58
   '';
 
   filesToInstall = [ "u-boot.itb" "idbloader.img" "u-boot-rockchip.bin" ];

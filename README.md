@@ -21,12 +21,27 @@ This repository is for my own research, development and bringup of the H96 Max V
 # Usage
 
 1. Get the device into maskrom or loader mode
-2. `nix build .#h96-v58-max-image`
+2. `nix build .#h96-max-v58-image`
 3. `rkdeveloptool wl 0 ./result/sd-image/*.img`
 
 # What works?
 
-Currently, ethernet is working based on the minimal device tree I've made in ./u-boot/rk3588-H96-V58.dts
+Working:
+
+- Ethernet
+- WiFi
+- HDMI
+- GPU
+- RTC
+- USB 3.0
+- USB 2.0
+
+Not working:
+
+- Bluetooth
+- HDMI Audio
+- LEDs
+- Infrared Receive
 
 # Todo
 

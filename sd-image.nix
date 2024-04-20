@@ -1,6 +1,7 @@
 { modulesPath, pkgs, lib, config, ... }:
 let
-  uboot = pkgs.callPackage ./u-boot {};
+  #uboot = pkgs.callPackage ./u-boot {};
+  uboot = pkgs.ubootH96MaxV58;
 in
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [

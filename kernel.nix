@@ -1,10 +1,8 @@
 {
-  stdenv,
-  lib,
   buildPackages,
   fetchFromGitLab,
-  perl,
   buildLinux,
+  fetchpatch2,
   ...
 }@args:
 
@@ -12,8 +10,14 @@ let
   # https://gitlab.collabora.com/hardware-enablement/rockchip-3588/linux/-/tree/rk3588?ref_type=heads
   # 99fc9cef1176e5290f88c1f55589174022a638cd
   modDirVersion = "6.9.0-rc1";
-  tag = "99fc9cef1176e5290f88c1f55589174022a638cd";
-  hash = "sha256-XVHwoBIE5REaRJfLR/wkv9uF1/p0Le7SGpWwP3yXz6c=";
+
+  # hdmi audio does not work on this rev
+#  tag = "b8807d4c1f35361910dadfac9b2d4911fe033f45";
+#  hash = "sha256-SY1SWr5QqqxkaBXToObO9hTrklbFdJle3r5F26LXqK4=";
+
+  # hdmi-audio branch, but it still doesn't work
+  tag = "b87029303f970a0e0f01a89ea6b8928f24d8619b";
+  hash = "sha256-tkU8tlf3ei0ihLGbrZz8Li5lMZWbwM0jFv/klgQ+wh4=";
 in
 buildLinux (
   args
@@ -84,9 +88,8 @@ buildLinux (
       ++ (with buildPackages.kernelPatches; [
         bridge_stp_helper
         request_key_helper
-      ]);
-
-    # defconfig = "defconfig??";
+      ])
+      ++ (import ./kernelPatches.nix { inherit fetchpatch2; });
   }
   // (args.argsOverride or { })
 )
